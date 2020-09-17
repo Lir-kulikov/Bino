@@ -20,5 +20,5 @@ function setHeight(className, height) {
 }
 var max = getMaxHeight('.feature-card__title');
 setHeight('.feature-card__title', max);
-setTimeout(window.onresize = getMaxHeight('.feature-card__title'), 500);
-setTimeout(window.onresize = setHeight('.feature-card__title', max), 500);
+setTimeout(window.onresize = function() {getMaxHeight('.feature-card__title')}, 500);
+setTimeout(window.onresize = function() {setHeight('.feature-card__title', max)}, 500);

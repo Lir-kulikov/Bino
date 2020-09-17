@@ -2,7 +2,7 @@
 /node_modules
 
 # compiled output
-/build
+#/build
 
 # System Files
 .DS_Store
