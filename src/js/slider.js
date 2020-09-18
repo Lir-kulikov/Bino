@@ -1,5 +1,7 @@
 // import '../../node_modules/swiper/dist/js/swiper.min.js';
-import Swiper from 'swiper'
+// import Swiper from 'swiper'
+import Swiper, { Navigation, Pagination } from 'swiper';
+// Swiper.use([Navigation, Pagination]);
 
 const mySwiper = new Swiper(document.querySelector('.swiper-container'), {
     slidesPerView: 1,
@@ -17,16 +19,34 @@ const sliderServicesInfo = document.querySelector('.swiper-container-services-in
 const mySwiperServicesInfo = new Swiper(sliderServicesInfo, {
     sliderPerView: 1,
     speed: 1000,
+    grabCursor: true,
     spaceBetween: 100,
     direction: 'vertical',
+    navigation: {
+        nextEl: '.swiper-button-next-service',
+        prevEl: '.swiper-button-prev-service',
+      },
     pagination: {
-        el: 'swiper-paginations-services-info',
+        el: '.swiper-pagination-services',
+        type: "bullets",
         clickable: true,
-    }
+        progressbarOpposite: true
+    },
 });
 
-// const sliderServicesImages = document.querySelector('.swiper-container-services-images');
-// const mySwiperServicesImages = new Swiper(sliderServicesImages, {
-//     sliderPerView: 1,
-//     effect: fade,
-// });
+const sliderServicesImages = document.querySelector('.swiper-container-services-images');
+const mySwiperServicesImages = new Swiper(sliderServicesImages, {
+    sliderPerView: 1,
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+      },
+    pagination: {
+        el: '.swiper-pagination-services',
+        type: "bullets",
+        clickable: true,
+    },
+});
+
+mySwiperServicesImages.controller.control = mySwiperServicesInfo;
+mySwiperServicesInfo.controller.control = mySwiperServicesImages;

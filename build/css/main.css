@@ -60,14 +60,6 @@ select {
   font-display: swap;
   font-family: "OpenSans";
   font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "OpenSans";
-  font-style: normal;
   font-weight: 600;
   src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2");
 }
@@ -76,8 +68,16 @@ select {
   font-display: swap;
   font-family: "OpenSans";
   font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SourceSansPro";
+  font-style: normal;
   font-weight: 600;
-  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -90,10 +90,10 @@ select {
 
 @font-face {
   font-display: swap;
-  font-family: "SourceSansPro";
+  font-family: "OpenSans";
   font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2");
+  font-weight: 600;
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -108,8 +108,8 @@ select {
   font-display: swap;
   font-family: "SourceSansPro";
   font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2");
 }
 
 * {
@@ -633,15 +633,18 @@ body {
 .services {
   position: relative;
   overflow: hidden;
+  min-height: 765px;
   background-color: #202020;
 }
 
 .services__inner {
   display: flex;
+  height: 100%;
   justify-content: space-between;
 }
 
 .services__info {
+  position: relative;
   width: 50%;
   margin-top: 140px;
   margin-bottom: 140px;
@@ -680,10 +683,23 @@ body {
 .services__img {
   width: 100%;
   height: 100%;
-  background-image: url("../img/services-slide-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.services__img:nth-child(1) {
+  background-image: url("../img/services-slide-1.jpg");
+}
+
+.services__img:nth-child(2) {
+  background-image: url("../img/services-slide-2.jpg");
+  background-position: center left;
+}
+
+.services__img:nth-child(3) {
+  background-image: url("../img/services-slide-3.jpg");
+  background-position: center right;
 }
 
 .swiper-container-services-images {
@@ -692,9 +708,45 @@ body {
 }
 
 .swiper-container-services-info {
+  position: absolute;
+  top: 102%;
+  right: -120px;
   width: 100%;
   height: 370px;
-  overflow-x: visible;
+  padding-right: 122px;
+  overflow-y: hidden;
+}
+
+.swiper-pagination-services {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 49px;
+  transform: translateY(-50%);
+}
+
+.swiper-pagination-services.swiper-pagination-bullets {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-pagination-services .swiper-pagination-bullet {
+  width: 10px;
+  height: 34px;
+  border-left: 1px solid #6a6a6a;
+  background: none;
+  border-radius: 0;
+}
+
+.swiper-pagination-services .swiper-pagination-bullet:not(:last-child) {
+  margin-bottom: 11px;
+}
+
+.swiper-pagination-services .swiper-pagination-bullet-active {
+  width: 10px;
+  border-left: 2px solid #e74c3c;
+  background: none;
+  border-radius: 0;
 }
 
 .service-items__item:not(:last-child) {
