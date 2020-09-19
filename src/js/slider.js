@@ -50,3 +50,15 @@ const mySwiperServicesImages = new Swiper(sliderServicesImages, {
 
 mySwiperServicesImages.controller.control = mySwiperServicesInfo;
 mySwiperServicesInfo.controller.control = mySwiperServicesImages;
+
+const sliderStudyInfo = document.querySelector('.swiper-container-study-info');
+
+const mySwiperStudyInfo = new Swiper(sliderStudyInfo, {
+    sliderPerView: 1,
+    speed: 1000,
+    pagination: {
+        el: '.swiper-pagination-study',
+        type: "bullets",
+        clickable: true,
+    },
+})
