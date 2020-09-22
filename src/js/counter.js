@@ -27,11 +27,10 @@ const countUp5 = new CountUp(count5, 285, {
 
 window.addEventListener('scroll', () => {
   let scrollY = window.scrollY;
-  console.log(scrollY);
 
   let amountOffset = section.offsetTop;
 
-  if (scrollY >= amountOffset - 500) {
+  if (scrollY >= amountOffset - 600) {
     countUp.start();
     countUp2.start();
     countUp3.start();

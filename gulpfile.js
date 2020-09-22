@@ -88,14 +88,23 @@ const fontsStyle = (done) => {
 	fs.readdir(appFonts, function (err, items) {
 	  if (items) {
 		let c_fontname;
+		let style;
+		let fontStyle;
 		for (var i = 0; i < items.length; i++) {
-				  let fontname = items[i].split('.');
+					let fontname = items[i].split('.');
+					style = items[i].includes('Italic');
+					if (style == true) {
+						fontStyle = 'italic'
+					} else {
+						fontStyle = 'normal'
+					}
 				  fontname = fontname[0];
 		  let font = fontname.split('-')[0];
-		  let weight = checkWeight(fontname);
+			let weight = checkWeight(fontname);
+
   
 		  if (c_fontname != fontname) {
-			fs.appendFile(srcFonts, '@include font-face("' + font + '", "' + fontname + '", ' + weight +');\r\n', cb);
+			fs.appendFile(srcFonts, '@include font-face("' + font + '", "' + fontname + '", "' + weight +'", ' + fontStyle +');\r\n', cb);
 		  }
 		  c_fontname = fontname;
 		}
