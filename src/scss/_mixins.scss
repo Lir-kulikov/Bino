@@ -1,3 +1,5 @@
+//fonts
+
 @mixin font-face($font-family, $url, $weight, $style) {
   @font-face {
     font-display: swap;
@@ -5,5 +7,56 @@
     font-style: #{$style};
     font-weight: #{$weight};
     src: url('../fonts/#{$url}.woff2') format('woff2');
+  }
+}
+
+//media
+
+// Using
+//.div {
+//   @include _1170 {
+//       @content;
+//   }
+//}
+
+@mixin _1240 {
+  @media (max-width: 1240px) {
+    @content;
+  }
+}
+
+@mixin _1170 {
+  @media (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin _979 {
+  @media (max-width: 979px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _600 {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin _480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin _350 {
+  @media (max-width: 350px) {
+    @content;
   }
 }

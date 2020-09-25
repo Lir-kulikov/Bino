@@ -9,13 +9,18 @@ $dark-2: #6a6a6a;
 $dark-3: #999999;
 $accent: #e74c3c;
 
+//shadows
+
 $shadow-btn: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
 $shadow-card: 0 3px 5px rgba(0, 0, 0, 0.1);
 $shadow-card-lg: 0 5px 5px rgba(0, 0, 0, 0.1);
-
 $shadow-partner: 0 1px 3px rgba(31, 31, 31, 0.09);
-
 $shadow-partner-active: 0 3px 9px 1px rgba(31, 31, 31, 0.3);
 
 $transition: 0.3s;
+
+//fonts
+
+$default: 'SourceSansPro', sans-serif;
+$second: 'OpenSans', sans-serif;
 

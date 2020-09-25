@@ -1,54 +1,30 @@
-import '../../node_modules/just-validate/dist/js/just-validate.min.js';
+import Pristine from '../../node_modules/pristinejs/dist/pristine.min.js'
 
-let validateForms = function (selector, rules, succesModal, yaGoal) {
-    new window.JustValidate(selector, {
-        rules: rules,
-        colorWrong : '#e74c3c',
-        messages: {
-            message: {
-                minLength: 'Комментарий должен содержать не менее 3 симоволов',
-                required: 'Поле обязательно для заполения'
-            },
-            name: {
-                required: 'Поле обязательно для заполения',
-                minLength: 'Имя должно содержать не менее 3 симоволов'
-            },
-            email: 'Введите корректный E-mail',
-            subject: {
-                required: 'Поле обязательно для заполения',
-            },
-            // checkbox: 'Поле обязательно для заполнения',
-            // login: 'Поле обязательно для заполнения',
-            // password: 'Поле обязательно для заполнения',
-        },
-        submitHandler: function (form) {
+const form = document.querySelector(".form-contacts");
+const pristine = new Pristine(form);
 
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var valid = pristine.validate();
+    if (valid === true) {
+        // pristine.reset()
+        document.querySelector('.form-thx').classList.add('is-open');
+        setTimeout(() => {
+            document.querySelector('.form-thx').classList.remove('is-open');
+        }, 3000);
+        document.querySelector('.form-thx__close').addEventListener('click', () => {
+            document.querySelector('.form-thx').classList.remove('is-open');
+        });
+        for (let elem of form.elements) {
+            if (
+                !elem.classList.contains("btn") && !elem.classList.contains("form-thx")
+            ) {
+                elem.value = "";
+                pristine.reset();
+                
+            }
         }
-    });
-}
-
-validateForms('.form-contacts', {
-    email: {
-        required: true,
-        email: true
-    },
-    name: {
-        required: true
-    },
-    subject: {
-        required: true
-    },
-    message: {
-        required: true
     }
-}, '.thanks-popup', 'send goal');
+});
 
-// validateForms('.form-modal', {
-//     login: {
-//         required: true
-//     },
-//     password: {
-//         required: true
-//     }
-// },
-// );
+//pristine-error text-help
