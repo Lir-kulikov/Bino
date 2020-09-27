@@ -144,7 +144,6 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  overflow: hidden;
   padding-top: 39px;
 
   &__inner {
@@ -1664,6 +1663,10 @@ body {
       padding-top: 50px;
       padding-bottom: 50px;
     }
+
+    @include _600 {
+      align-items: flex-start;
+    }
   }
 
   &__item {
@@ -1695,6 +1698,12 @@ body {
     background-repeat: no-repeat;
     background-size: 31px;
     border-radius: 50%;
+
+    @include _600 {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 20px;
+    }
   }
 
   &:nth-child(1) {
@@ -1924,10 +1933,15 @@ body {
     position: absolute;
     top: 0;
     left: 90px;
+    display: none;
     width: 2px;
     height: 100%;
     background-color: $accent;
     content: '';
+
+    @include _768 {
+      display: block;
+    }
   }
 
   &::after {
@@ -1958,15 +1972,16 @@ body {
   }
 
   &__subtitile {
-    max-width: 70%;
     margin-bottom: 20px;
-    margin-left: auto;
-    text-align: left;
   }
 
   &__circle-line {
-    //max-width: 70%;
-    margin-left: 20%;
+    @include _480 {
+      max-width: 70%;
+      margin-left: 20%;
+      margin-left: auto;
+      text-align: left;
+    }
   }
 
   &__line-team {
@@ -2032,7 +2047,7 @@ body {
 
       &:nth-child(5) {
         //margin-top: -7px;
-        margin-top: calc(70px - 6vw);
+        margin-top: calc(-5vw + 70px);
 
         @include _768 {
           margin-top: 0;
@@ -2269,20 +2284,21 @@ body {
   }
 
   &__item {
-    flex-basis: 50%;
+    @media (min-width: 1401px) {
+      flex-basis: 50%;
 
+      &:nth-child(4n),
+      &:nth-child(4n-1) {
+        flex-direction: row-reverse;
 
-    &:nth-child(4n),
-    &:nth-child(4n-1) {
-      flex-direction: row-reverse;
-
-      .blog__info::before {
-        right: -70px;
-        transform: translateY(-50%) rotate(270deg);
+        .blog__info::before {
+          right: -70px;
+          transform: translateY(-50%) rotate(270deg);
+        }
       }
     }
 
-    @media (max-width: 1400px) {
+    @media screen and (min-width: 601px) and (max-width: 1400px) {
       flex-basis: 100%;
 
       &:nth-child(even) {
@@ -2300,11 +2316,19 @@ body {
 .blog-card {
   display: flex;
 
+  @include _600 {
+    flex-direction: column;
+  }
+
   &__img {
     flex-basis: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include _600 {
+      padding-top: 80%;
+    }
   }
 
   &__info {
@@ -2314,6 +2338,14 @@ body {
     background-color: $accent;
     color: $white;
     text-align: left;
+
+    @include _768 {
+      padding: 30px;
+    }
+
+    @include _480 {
+      padding: 20px;
+    }
 
     &::before {
       position: absolute;
@@ -2330,13 +2362,34 @@ body {
     }
   }
 
-  &:nth-child(4n),
-  &:nth-child(4n-1) {
-    flex-direction: row-reverse;
+  @media (min-width: 1401px) {
+    &:nth-child(4n),
+    &:nth-child(4n-1) {
+      flex-direction: row-reverse;
 
+      .blog-card__info::before {
+        left: 98%;
+        transform: translateY(-50%) rotate(270deg);
+      }
+    }
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1400px) {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .blog-card__info::before {
+        left: 98%;
+        transform: translateY(-50%) rotate(270deg);
+      }
+    }
+  }
+
+  @include _600 {
     .blog-card__info::before {
-      left: 98%;
-      transform: translateY(-50%) rotate(270deg);
+      top: -34px;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) rotate(180deg);
     }
   }
 
@@ -2346,6 +2399,10 @@ body {
     font-family: $second;
     font-size: 14px;
     letter-spacing: 0.7px;
+
+    @include _768 {
+      margin-bottom: 10px;
+    }
   }
 
   &__title {
@@ -2354,6 +2411,10 @@ body {
     font-size: 24px;
     letter-spacing: 1.2px;
     text-transform: uppercase;
+
+    @include _768 {
+      margin-bottom: 30px;
+    }
 
     &::before {
       position: absolute;
@@ -2372,6 +2433,10 @@ body {
     font-size: 16px;
     letter-spacing: 0.4px;
     line-height: 1.88;
+
+    @include _768 {
+      margin-bottom: 20px;
+    }
   }
 
   &__footer {
@@ -2416,6 +2481,11 @@ body {
   background-color: $light-1;
   text-align: center;
 
+  @include _768 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   &__title {
     margin-bottom: 15px;
     letter-spacing: normal;
@@ -2431,6 +2501,14 @@ body {
     margin-top: 65px;
     margin-right: -15px;
     margin-left: -15px;
+
+    @include _979 {
+      display: block;
+    }
+
+    @include _768 {
+      margin-top: 30px;
+    }
   }
 
   &__info {
@@ -2451,9 +2529,26 @@ body {
   box-shadow: $shadow-card-lg;
   text-align: left;
 
+  @include _979 {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  @include _768 {
+    padding: 50px;
+  }
+
+  @include _480 {
+    padding: 20px;
+  }
+
   &__item {
     &:not(:last-child) {
       margin-bottom: 54px;
+
+      @include _480 {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -2463,6 +2558,10 @@ body {
     font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
+
+    @include _480 {
+      margin-bottom: 8px;
+    }
   }
 
   &__info {
@@ -2490,6 +2589,14 @@ body {
   background-color: $white;
   box-shadow: $shadow-card-lg;
   text-align: left;
+
+  @include _768 {
+    padding: 50px;
+  }
+
+  @include _480 {
+    padding: 25px 20px 20px;
+  }
 
   &__list {
     margin-bottom: 29px;
@@ -2554,6 +2661,10 @@ body {
 
   &__btn {
     padding: 11px 24px;
+
+    @include _480 {
+      width: 100%;
+    }
   }
 }
 
@@ -2620,6 +2731,10 @@ body {
   overflow: hidden;
   height: 480px;
 
+  @include _768 {
+    height: 400px;
+  }
+
   &__bg {
     height: 120%;
     padding-top: 138px;
@@ -2627,6 +2742,11 @@ body {
     background-position: top top;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include _768 {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
 
     &::before {
       position: absolute;
@@ -2649,6 +2769,10 @@ body {
     font-family: $second;
     font-size: 36px;
     font-weight: 400;
+
+    @include _480 {
+      font-size: 28px;
+    }
   }
 
   &__subtitle {
@@ -2657,6 +2781,10 @@ body {
     font-family: $second;
     font-size: 18px;
     font-weight: 400;
+
+    @include _768 {
+      font-size: 14px;
+    }
   }
 
   &__btn {
@@ -2676,6 +2804,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include _600 {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__copy {
@@ -2687,6 +2820,10 @@ body {
 }
 
 .social {
+  @include _600 {
+    margin-bottom: 20px;
+  }
+
   &__list {
     display: flex;
   }

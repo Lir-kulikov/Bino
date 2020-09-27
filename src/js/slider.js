@@ -6,6 +6,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 const mySwiper = new Swiper(document.querySelector('.swiper-container'), {
     slidesPerView: 1,
     speed: 1000,
+    spaceBetween: 50,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
