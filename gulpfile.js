@@ -331,4 +331,6 @@ exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resourc
 
 // exports.deploy = deploy;
 
-ghpages.publish('build', callback);
+ghpages.publish('build', {
+	message: 'Auto-generated commit'
+}, callback);
