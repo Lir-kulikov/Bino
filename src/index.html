@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<div class="page-wrapper">
   @include('partials/header.html')
 
   <main class="main">
@@ -61,8 +61,8 @@
               </div>
             </div>
             <div class="hero__action">
-              <a href="#" class="hero__btn btn btn--solid">GET STARTED NOW</a>
-              <a href="#" class="hero__btn btn btn--transparent">Learn more</a>
+              <a href="#contacts" class="hero__btn btn btn--solid">GET STARTED NOW</a>
+              <a href="#features" class="hero__btn btn btn--transparent">Learn more</a>
             </div>
             <a href="#features" class="hero__dropdown">
               <svg class="hero__dropdown-icon">
@@ -78,37 +78,33 @@
         <div class="features__inner">
 
           <div class="features__item feature-card">
-            <div class="feature-card__icon-wrapper">
-              <i class="feature-card__icon"></i>
+            <div class="feature-card__icon">
             </div>
-            <span class="feature-card__title">SLEEK DESIGN</span>
+            <span class="feature-card__title js-equal-height">SLEEK DESIGN</span>
             <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
               Ipsum has been the industry.</p>
           </div>
 
           <div class="features__item feature-card">
-            <div class="feature-card__icon-wrapper">
-              <i class="feature-card__icon"></i>
+            <div class="feature-card__icon">
             </div>
-            <span class="feature-card__title">CLEAN CODE</span>
+            <span class="feature-card__title js-equal-height">CLEAN CODE</span>
             <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
               Ipsum has been the industry.</p>
           </div>
 
           <div class="features__item feature-card">
-            <div class="feature-card__icon-wrapper">
-              <i class="feature-card__icon"></i>
+            <div class="feature-card__icon">
             </div>
-            <span class="feature-card__title">CREATIVE IDEAS</span>
+            <span class="feature-card__title js-equal-height">CREATIVE IDEAS</span>
             <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
               Ipsum has been the industry.</p>
           </div>
 
           <div class="features__item feature-card">
-            <div class="feature-card__icon-wrapper">
-              <i class="feature-card__icon"></i>
+            <div class="feature-card__icon">
             </div>
-            <span class="feature-card__title">FREE SUPPORT</span>
+            <span class="feature-card__title js-equal-height">FREE SUPPORT</span>
             <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
               Ipsum has been the industry.</p>
           </div>
@@ -134,7 +130,7 @@
                 Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
                 versions of Lorem Ipsum.</p>
             </div>
-            <a href="#" class="btn btn--solid about__btn">BROWSE OUR WORK</a>
+            <a href="#works" class="btn btn--solid about__btn">BROWSE OUR WORK</a>
           </div>
         </div>
       </div>
@@ -248,37 +244,37 @@
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-all" checked="checked" name="works-nav">
-              <label class="works-nav__label" for="works-radio-all">All</label>
+              <label class="works-nav__label" data-value="All" for="works-radio-all">All</label>
             </li>
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-print-design" name="works-nav">
-              <label class="works-nav__label" for="works-radio-print-design">Print Design</label>
+              <label class="works-nav__label" data-value="Print Design" for="works-radio-print-design">Print Design</label>
             </li>
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-animation" name="works-nav">
-              <label class="works-nav__label" for="works-radio-animation">Animation</label>
+              <label class="works-nav__label" data-value="Animation" for="works-radio-animation">Animation</label>
             </li>
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-art" name="works-nav">
-              <label class="works-nav__label" for="works-radio-art">Art</label>
+              <label class="works-nav__label" data-value="Art" for="works-radio-art">Art</label>
             </li>
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-web" name="works-nav">
-              <label class="works-nav__label" for="works-radio-web">Web Design</label>
+              <label class="works-nav__label" data-value="Web Design" for="works-radio-web">Web Design</label>
             </li>
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-photo" name="works-nav">
-              <label class="works-nav__label" for="works-radio-photo">Photography</label>
+              <label class="works-nav__label" data-value="Photography" for="works-radio-photo">Photography</label>
             </li>
 
             <li class="works-nav__item">
               <input class="works-nav__input" type="radio" id="works-radio-video" name="works-nav">
-              <label class="works-nav__label" for="works-radio-video">Video</label>
+              <label class="works-nav__label" data-value="Video" for="works-radio-video">Video</label>
             </li>
 
           </ul>
@@ -418,7 +414,7 @@
     
               <div class="amount__item item-amount">
                 <div class="item-amount__icon"></div>
-                <span class="item-amount__number js-count-2">281K</span>
+                <span class="item-amount__number js-count-2">281</span>
                 <span class="item-amount__text">Posts Last 24 Hours</span>
               </div>
     
@@ -764,6 +760,8 @@
       <use xlink:href="img/svg/sprite.svg#up-arrow"></use>
     </svg>
   </a>
+
+</div>
   <script src="js/main.js"></script>
 </body>
 

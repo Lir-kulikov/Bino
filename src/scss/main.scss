@@ -24,6 +24,10 @@ body {
   font-style: normal;
 }
 
+.page-wrapper {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1200px;
   padding: 0 15px;
@@ -255,32 +259,40 @@ body {
 }
 
 .nav {
+  //width: 0;
   height: 100%;
 
   @include _979 {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 320px;
+    right: -105%;
     height: 100vh;
     background-color: rgba($dark-1, 0.95);
-    transform: translateX(120%);
-    transition: transform $transition ease;
+    transition: all $transition ease;
 
     &.is-active {
-      transform: translateX(0);
+      right: 0;
+      width: 320px;
+
+      .nav__list {
+        display: flex;
+      }
     }
   }
 
   @include _480 {
-    width: 100%;
+    &.is-active {
+      width: 100vw;
+    }
   }
 
   &__list {
     display: flex;
     height: 100%;
+    justify-content: space-between;
 
     @include _979 {
+      display: none;
       height: auto;
       flex-direction: column;
       margin-top: 100px;
@@ -637,13 +649,9 @@ body {
 
 .feature-card {
   &:hover {
-    .feature-card__icon-wrapper {
+    .feature-card__icon::before {
       border: 1px solid $accent;
       transform: rotate(45deg);
-    }
-
-    .feature-card__icon {
-      transform: rotate(-45deg);
     }
 
     .feature-card__title {
@@ -651,51 +659,61 @@ body {
     }
   }
 
-  &__icon-wrapper {
-    display: flex;
+  &__icon {
+    position: relative;
     width: 72px;
     height: 72px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba($dark-3, 0.25);
     margin-right: auto;
     margin-bottom: 23px;
     margin-left: auto;
-    text-align: center;
-    transition: $transition linear;
-  }
+    transition: $transition ease;
 
-  &__icon {
-    position: absolute;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: $transition linear;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 72px;
+      height: 72px;
+      border: 1px solid rgba($dark-3, 0.25);
+      content: '';
+      transition: $transition ease;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: '';
+      transform: translateY(-50%) translateX(-50%);
+      transition: $transition ease;
+    }
   }
 
   &:nth-child(1) {
-    .feature-card__icon {
+    .feature-card__icon::after {
       background-image: url('../img/glasses.png');
     }
   }
 
   &:nth-child(2) {
-    .feature-card__icon {
-      width: 21px;
+    .feature-card__icon::after {
       background-image: url('../img/heart.png');
     }
   }
 
   &:nth-child(3) {
-    .feature-card__icon {
+    .feature-card__icon::after {
       background-image: url('../img/lamp.png');
     }
   }
 
   &:nth-child(4) {
-    .feature-card__icon {
+    .feature-card__icon::after {
       background-image: url('../img/messages.png');
     }
   }
@@ -834,163 +852,7 @@ body {
   }
 }
 
-// services
-
-// .services {
-//   position: relative;
-//   overflow: hidden;
-//   min-height: 765px;
-//   background-color: $dark-1;
-
-//   &__inner {
-//     display: flex;
-//     height: 100%;
-//     justify-content: space-between;
-//   }
-
-//   &__info {
-//     position: relative;
-//     width: 50%;
-//     margin-top: 140px;
-//     margin-bottom: 140px;
-//     text-align: right;
-//   }
-
-//   &__title {
-//     position: relative;
-//     padding-right: 30px;
-//     margin-bottom: 58px;
-
-//     &::before {
-//       position: absolute;
-//       top: 50%;
-//       right: 0;
-//       width: 6px;
-//       height: 36px;
-//       background-color: $accent;
-//       content: '';
-//       transform: translateY(-50%);
-//     }
-//   }
-
-//   &__images {
-//     position: absolute;
-//     z-index: 0;
-//     top: 0;
-//     right: 0;
-//     width: 50%;
-//     height: 100%;
-//     flex-basis: 50%;
-//     padding-left: 78px;
-//   }
-
-//   &__img {
-//     width: 100%;
-//     height: 100%;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-// }
-
-// .swiper-container-services-images {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .swiper-container-services-info {
-//   position: absolute;
-//   top: 102%;
-//   right: -120px;
-//   width: 100%;
-//   height: 370px;
-//   padding-right: 122px;
-//   overflow-y: hidden;
-// }
-
-// .swiper-pagination-services {
-//   position: absolute;
-//   z-index: 2;
-//   top: 50%;
-//   left: 49px;
-//   transform: translateY(-50%);
-
-//   &.swiper-pagination-bullets {
-//     display: flex;
-//     flex-direction: column;
-//   }
-
-//   & .swiper-pagination-bullet {
-//     width: 10px;
-//     height: 34px;
-//     border-left: 1px solid $dark-2;
-//     background: none;
-//     border-radius: 0;
-
-//     &:not(:last-child) {
-//       margin-bottom: 11px;
-//     }
-
-//     &-active {
-//       width: 10px;
-//       border-left: 2px solid $accent;
-//       background: none;
-//       border-radius: 0;
-//     }
-//   }
-// }
-
-// .service-items__item:not(:last-child) {
-//   margin-bottom: 55px;
-// }
-
-// .service-item {
-//   position: relative;
-
-//   &__title {
-//     margin-bottom: 3px;
-//     color: $accent;
-//     font-family: 'OpenSans-SemiBold', sans-serif;
-//     font-size: 18px;
-//     font-style: normal !important;
-//     font-weight: 600;
-//     line-height: 29px;
-//   }
-
-//   &__text {
-//     color: $dark-2;
-//     font-size: 14px;
-//     line-height: 2.07;
-//   }
-
-//   &::before {
-//     position: absolute;
-//     z-index: 2;
-//     top: 50%;
-//     right: -112px;
-//     width: 64px;
-//     height: 64px;
-//     background-color: $light-1;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     border-radius: 50%;
-//     box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.25);
-//     content: '';
-//     transform: translateY(-50%);
-//   }
-
-//   &:nth-child(1)::before {
-//     background-image: url('../img/computer.svg');
-//   }
-
-//   &:nth-child(2)::before {
-//     background-image: url('../img/print-design.svg');
-//   }
-
-//   &:nth-child(3)::before {
-//     background-image: url('../img/photo.svg');
-//   }
-// }
+//services
 
 .services {
   position: relative;
@@ -1017,7 +879,7 @@ body {
     }
 
     @include _600 {
-      margin-top: 30px;
+      margin-top: 50px;
       margin-bottom: 30px;
     }
   }
@@ -1073,7 +935,7 @@ body {
 }
 
 .swiper-container-services-info {
-  height: auto;
+  height: 500px;
   padding-right: 122px;
   margin-right: -120px;
   margin-left: 60px;
@@ -1094,10 +956,6 @@ body {
     padding-right: 15px;
     margin-left: 15px;
   }
-}
-
-.swiper-slide {
-  height: auto;
 }
 
 .swiper-pagination-services {
@@ -1271,6 +1129,19 @@ body {
     position: relative;
     flex-shrink: 0;
 
+    @include _768 {
+      &:last-child {
+        &::after {
+          position: absolute;
+          right: -20px;
+          display: block;
+          width: 50px;
+          height: 1px;
+          content: '';
+        }
+      }
+    }
+
     &:not(:last-child) {
       margin-right: 42px;
 
@@ -1295,18 +1166,39 @@ body {
     display: none;
 
     &:checked ~ .works-nav__label {
-      color: $accent;
-      text-shadow: 0 0 0.6px $accent, 0 0 0.6px $accent;
+      color: transparent;
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
   &__label {
+    position: relative;
     cursor: pointer;
-    transition: $transition linear;
+    transition: $transition ease;
 
     &:hover {
+      color: transparent;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      display: inline-block;
       color: $accent;
-      text-shadow: 0 0 0.6px $accent, 0 0 0.6px $accent;
+      content: attr(data-value);
+      font-weight: bold;
+      opacity: 0;
+      transform: translateX(-50%);
+      transition: $transition ease;
+      white-space: nowrap;
     }
   }
 
@@ -1716,6 +1608,10 @@ body {
     .item-amount__icon {
       background-image: url('../img/sticker-figures.png');
     }
+
+    .item-amount__number::after {
+      content: 'K';
+    }
   }
 
   &:nth-child(3) {
@@ -1942,6 +1838,10 @@ body {
     @include _768 {
       display: block;
     }
+
+    @include _480 {
+      left: 60px;
+    }
   }
 
   &::after {
@@ -2005,6 +1905,10 @@ body {
 
   @include _768 {
     display: block;
+  }
+
+  @include _480 {
+    padding: 0 20px;
   }
 
   &__avatar {

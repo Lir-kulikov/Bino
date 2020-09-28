@@ -18,22 +18,15 @@ const mySwiper = new Swiper(document.querySelector('.swiper-container'), {
  
 const sliderServicesInfo = document.querySelector('.swiper-container-services-info');
 const mySwiperServicesInfo = new Swiper(sliderServicesInfo, {
-    //sliderPerView: 1,
     speed: 1000,
     slidesPerView: 1,
-    //autoHeight: true,
     grabCursor: true,
-    //spaceBetween: 100,
+    spaceBetween: 100,
     direction: 'vertical',
-    navigation: {
-        nextEl: '.swiper-button-next-service',
-        prevEl: '.swiper-button-prev-service',
-      },
     pagination: {
         el: '.swiper-pagination-services',
         type: "bullets",
         clickable: true,
-        progressbarOpposite: true
     },
 });
 
@@ -45,7 +38,6 @@ const mySwiperServicesImages = new Swiper(sliderServicesImages, {
         crossFade: true
       },
     pagination: {
-        el: '.swiper-pagination-services',
         type: "bullets",
         clickable: true,
     }
@@ -67,81 +59,43 @@ const mySwiperStudyInfo = new Swiper(sliderStudyInfo, {
     },
 })
 
+// находит высоту элемента слайда с учетом внешних отступов
+function getAbsoluteHeight(el) {
+    el = (typeof el === 'string') ? document.querySelector(el) : el; 
+  
+    let styles = window.getComputedStyle(el);
+    let margin = parseFloat(styles['marginTop']) +
+                 parseFloat(styles['marginBottom']);
+  
+    return Math.ceil(el.offsetHeight + margin);
+  }
+
+// находит высоту самого высокого элемента, умножает на их количество и присваивает значение контейнеру слайдера
 
 let serviceItem = document.querySelectorAll('.service-item');
 function getServiceItemHeight () {
     let h = 0;
     let serviceItemHeight;
     for (let i = 0; i < serviceItem.length; i++) {
-        serviceItemHeight = serviceItem[i].offsetHeight;
+        serviceItemHeight = getAbsoluteHeight(serviceItem[i]);
         if (serviceItemHeight > h) {
             h = serviceItemHeight;
+            console.log(h);
         };
     }
-    sliderServicesInfo.style.height = ((h + 55) * 3 - 55 + 'px');
+    sliderServicesInfo.style.height = (h * mySwiperServicesInfo.slides[0].children.length + 'px');
+    mySwiperServicesInfo.updateSlides ();
+    mySwiperServicesInfo.updateSize () ;
 };
 
-document.addEventListener("DOMContentLoaded", getServiceItemHeight);
+// выполняет функцию при ресайзе и загрузки страницы
 
-window.addEventListener('resize', () => {
-    getServiceItemHeight()
+document.addEventListener("DOMContentLoaded", () => {
+    getServiceItemHeight();
 });
 
-// const wrapper = sliderServicesInfo.children[0];
-// const slide = wrapper.children;
-// console.log(slide)
-// function getServiceItemHeight () {
-//     let h = 0;
-//     let slideHeight;
-//     for (let i = 0; i < slide.length; i++) {
-//         slideHeight = slide[i].offsetHeight;
-//         console.log(slideHeight);
-//         if (slideHeight > h) {
-//             h = slideHeight;
-//         };
-//     }
-//     sliderServicesInfo.style.height = h / 3 + 'px';
-// };
+window.addEventListener('resize', () => {
+    getServiceItemHeight();
+});
 
-// document.addEventListener("DOMContentLoaded", getServiceItemHeight);
-
-// window.addEventListener('resize', () => {
-//     getServiceItemHeight()
-// });
-
-
-/* 
-1. свайпер контейнер
-2. свайпер слайд
-3 сервис итем
-
-1. найти сумму высот сервис итемов слайда с учтом отступов
-2. дать эту сумму родителю (слайду)
-3. передать высоту контейнеру
-
-*/
-// const wrapper = sliderServicesInfo.children[0];
-// const slide = wrapper.children;
-// function adaptiveSlide () {
-    
-//     let slideHeight = 0;
-//     for(let i = 0; i < slide.length; i++) {
-//         slideHeight = slide[i].offsetHeight;
-//         console.log(slideHeight);
-//         sliderServicesInfo.style.height = slideHeight + 100 + 'px';
-//         // if (slide[i].classList.contains('swiper-slide-active')) {
-//         //     sliderServicesInfo.style.height = slideHeight + 100 + 'px';
-//         // }
-//         //sliderHeight += slideHeight;
-//     }
-//     //console.log(slideHeight);
-// }
-
-// document.addEventListener("DOMContentLoaded", adaptiveSlide());
-// window.addEventListener("resize", adaptiveSlide());
-//sliderServicesInfo.style.height = 1000 + 'px';
-
-// mySwiperServicesInfo.on('slideChange', function () {
-//     console.log('slide changed');
-//   });
-
+setTimeout(getServiceItemHeight, 500);

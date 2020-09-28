@@ -1,7 +1,13 @@
+import SmoothScroll from '../../node_modules/smooth-scroll/dist/smooth-scroll.min.js';
+
+const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 500,
+  speedAsDuration: true
+});
+
 const topBtn = document.querySelector('.scroll-to-top');
 const heroHeight = document.querySelector('.hero').offsetHeight;
 const top = document.querySelector('.header');
-const links = document.querySelectorAll('.scroll');
 
 // обновление значений при ресайзе
 
@@ -36,17 +42,17 @@ window.onscroll = (e) => {
 //   });
 // }
 
-const anchors = document.querySelectorAll('a[href*="#"]')
+// const anchors = document.querySelectorAll('a[href*="#"]')
 
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+// for (let anchor of anchors) {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault()
     
-    const blockID = anchor.getAttribute('href').substr(1)
+//     const blockID = anchor.getAttribute('href').substr(1)
     
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
-}
+//     document.getElementById(blockID).scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start'
+//     })
+//   })
+// }

@@ -14,6 +14,7 @@
     "just-validate": "^1.5.0",
     "pristinejs": "^0.1.9",
     "rellax": "^1.12.1",
+    "smooth-scroll": "^16.1.3",
     "swiper": "^4.5.1"
   },
   "devDependencies": {

@@ -25,14 +25,10 @@ function toggleShadow($el, maxScrollReached) {
 
 $navList.addEventListener('scroll', (e) => handleShadowVisibility(e));
 
-$body.addEventListener('click', (e) => {
-  const $target = e.target;
-  const isLink = $target.getAttribute('href').indexOf('#') === 0;
-  
-  if (isLink) {
-    e.preventDefault();
-    activateItem($target, $navList);
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  handleShadowVisibility();
 });
 
-handleShadowVisibility();
+addEventListener('resize', () => {
+  handleShadowVisibility();
+});

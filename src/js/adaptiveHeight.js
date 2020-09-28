@@ -1,46 +1,28 @@
-// function getMaxHeight(className) {
-//   let max = 0;
-//   document.querySelectorAll(className).forEach(
-//     function(el) {
-//       console.info(Math.max(el.scrollHeight, max));
-//       if (el.scrollHeight > max) {
-//         max = el.scrollHeight;
-//       }
-//     }
-//   );
-//   return max;
-// }
+(function () {
+  equalHeight(false);
+})();
 
-// function setHeight(className, height) {
-//   document.querySelectorAll(className).forEach(
-//     function(el) {
-//       el.style.height = height+'px';
-//     }
-//   );
-// }
-// let max = getMaxHeight('.feature-card__title');
-// setHeight('.feature-card__title', max);
-// window.addEventListener('resize', () => { getMaxHeight('.feature-card__title')});
-// window.addEventListener('resize', () => { setHeight('.feature-card__title', max) });
+window.onresize = function() {
+  equalHeight(true);
+}
 
-// let maxHeight = -1;
-// $('.slick-slide').each(function() {
-//   if ($(this).height() > maxHeight) {
-//     maxHeight = $(this).height();
-//   }
-// });
-// $('.slick-slide').each(function() {
-//   if ($(this).height() < maxHeight) {
-//     $(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
-//   }
-// });
+function equalHeight(resize) {
+  let elements = document.querySelectorAll('.js-equal-height'),
+  allHeight = [],
+  i = 0;
 
-// let maxHeight = -1;
+  if (resize == true) {
+    for (i = 0; i < elements.length; i++) {
+      elements[i].style.height = 'auto';
+    }
+  }
 
-// let slideHeight = document.querySelectorAll('.swiper-slide');
+  for (i = 0; i < elements.length; i++) {
+    let elementHeight = elements[i].clientHeight;
+    allHeight.push(elementHeight);
+  }
 
-// console.log(slideHeight);
-
-// slideHeight.forEach(function() {
-//   console.log(slideHeight.offsetHeight);
-// })
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.height = Math.max.apply(Math, allHeight) + 'px';
+  }
+}
