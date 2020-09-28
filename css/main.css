@@ -67,10 +67,18 @@ select {
 
 @font-face {
   font-display: swap;
-  font-family: "OpenSans";
+  font-family: "SourceSansPro";
   font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "OpenSans";
+  font-style: italic;
+  font-weight: 600;
+  src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2");
 }
 
 @font-face {
@@ -93,24 +101,16 @@ select {
   font-display: swap;
   font-family: "OpenSans";
   font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-display: swap;
   font-family: "OpenSans";
-  font-style: italic;
-  font-weight: 600;
-  src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "SourceSansPro";
   font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2");
+  font-weight: 600;
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
 }
 
 * {
