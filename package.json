@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylelint": "stylelint '**/**/*{.css,.scss}' --fix || echo"
+    "stylelint": "stylelint '**/**/*{.css,.scss}' --fix || echo",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Lirrr",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.10",
     "del": "^5.1.0",
+    "gh-pages": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cheerio": "^1.0.0",

@@ -25,6 +25,7 @@ const imageminPngQuant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
 const plumber = require('gulp-plumber');
 const gcmq = require('gulp-group-css-media-queries');
+const ghpages = require('gh-pages');
 
 
 const fonts = () => {
@@ -307,25 +308,27 @@ exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resourc
 
 
 // deploy
-const deploy = () => {
-	let conn = ftp.create({
-		host: '',
-		user: '',
-		password: '',
-		parallel: 10,
-		log: gutil.log
-	});
+// const deploy = () => {
+// 	let conn = ftp.create({
+// 		host: '',
+// 		user: '',
+// 		password: '',
+// 		parallel: 10,
+// 		log: gutil.log
+// 	});
 
-	let globs = [
-		'build/**',
-	];
+// 	let globs = [
+// 		'build/**',
+// 	];
 
-	return src(globs, {
-			base: './build',
-			buffer: false
-		})
-		.pipe(conn.newer('')) // only upload newer files
-		.pipe(conn.dest(''));
-}
+// 	return src(globs, {
+// 			base: './build',
+// 			buffer: false
+// 		})
+// 		.pipe(conn.newer('')) // only upload newer files
+// 		.pipe(conn.dest(''));
+// }
 
-exports.deploy = deploy;
+// exports.deploy = deploy;
+
+ghpages.publish('build', callback);
