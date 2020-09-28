@@ -9,6 +9,7 @@
 </head>
 
 <body>
+@include('partials/sprite.html')
 <div class="page-wrapper">
   @include('partials/header.html')
 
@@ -17,12 +18,12 @@
     <section class="hero" style="background-image: url('img/bg-hero.png');">
         <div class="swiper-button-prev">
           <svg class="swiper-button-icon">
-            <use xlink:href="img/svg/sprite.svg#fa-angle-left"></use>
+            <use xlink:href="#fa-angle-left"></use>
           </svg>
         </div>
         <div class="swiper-button-next">
           <svg class="swiper-button-icon">
-            <use xlink:href="img/svg/sprite.svg#fa-angle-left"></use>
+            <use xlink:href="#fa-angle-left"></use>
           </svg>
         </div>
         <div class="container">
@@ -66,7 +67,7 @@
             </div>
             <a href="#features" class="hero__dropdown">
               <svg class="hero__dropdown-icon">
-                <use xlink:href="img/svg/sprite.svg#anchor"></use>
+                <use xlink:href="#anchor"></use>
               </svg>
             </a>
           </div>
@@ -732,7 +733,7 @@
             <div class="form-thx">
               <button class="form-thx__close" type="button">
                 <svg class="form-thx__icon">
-                  <use xlink:href="img/svg/sprite.svg#close"></use>
+                  <use xlink:href="#close"></use>
                 </svg>
               </button>
               <div class="form-thx__text">Форма успешно отправлена, спасибо!</div>
@@ -757,7 +758,7 @@
   @include('partials/footer.html')
   <a href="#top" class="scroll-to-top">
     <svg class="scroll-to-top__icon">
-      <use xlink:href="img/svg/sprite.svg#up-arrow"></use>
+      <use xlink:href="#up-arrow"></use>
     </svg>
   </a>
 
