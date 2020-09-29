@@ -1679,6 +1679,7 @@ body {
     margin-left: -8px;
 
     @include _1170 {
+      -webkit-overflow-scrolling: touch;
       overflow-x: auto;
     }
 
@@ -2221,7 +2222,8 @@ body {
   display: flex;
 
   @include _600 {
-    flex-direction: column;
+    //flex-direction: column;
+    display: block;
   }
 
   &__img {

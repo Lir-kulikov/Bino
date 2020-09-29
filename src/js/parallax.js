@@ -19,8 +19,4 @@ window.addEventListener('scroll', function () {
   rellaxStart.refresh()
 });
 
-// window.addEventListener('scroll', function () {
-//   rellaxStart.refresh()
-// });
-
 
