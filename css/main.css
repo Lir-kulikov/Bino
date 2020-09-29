@@ -35,7 +35,11 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
   text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 a:not([class]) {
@@ -53,32 +57,11 @@ button,
 textarea,
 select {
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background: transparent;
   font: inherit;
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "OpenSans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "SourceSansPro";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "SourceSansPro";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -99,6 +82,38 @@ select {
 
 @font-face {
   font-display: swap;
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SourceSansPro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SourceSansPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
   font-family: "SourceSansPro";
   font-style: normal;
   font-weight: 700;
@@ -109,8 +124,8 @@ select {
   font-display: swap;
   font-family: "OpenSans";
   font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
 }
 
 * {
@@ -1877,6 +1892,7 @@ body {
 
 @media (max-width: 1170px) {
   .pricing__cards {
+    -webkit-overflow-scrolling: touch;
     overflow-x: auto;
   }
 }
@@ -2475,7 +2491,7 @@ body {
 
 @media (max-width: 600px) {
   .blog-card {
-    flex-direction: column;
+    display: block;
   }
 }
 
