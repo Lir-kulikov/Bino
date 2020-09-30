@@ -29,8 +29,10 @@ const ghpages = require('gh-pages');
 
 
 const fonts = () => {
-	return src('./src/fonts/**.ttf')
-	  .pipe(ttf2woff2())
+		src('./src/fonts/**.ttf')
+		.pipe(ttf2woff2())
+		.pipe(dest('./build/fonts/'));
+		return src('./src/fonts/**.ttf')
 	  .pipe(ttf2woff())
 	  .pipe(dest('./build/fonts/'));
 }
@@ -306,30 +308,7 @@ const scriptsBuild = () => {
 
 exports.build = series(clean, parallel(htmlInclude, scriptsBuild, fonts, resources, imgToApp, svgSprites), fontsStyle, stylesBuild, images);
 
-
-// deploy
-// const deploy = () => {
-// 	let conn = ftp.create({
-// 		host: '',
-// 		user: '',
-// 		password: '',
-// 		parallel: 10,
-// 		log: gutil.log
-// 	});
-
-// 	let globs = [
-// 		'build/**',
-// 	];
-
-// 	return src(globs, {
-// 			base: './build',
-// 			buffer: false
-// 		})
-// 		.pipe(conn.newer('')) // only upload newer files
-// 		.pipe(conn.dest(''));
-// }
-
-// exports.deploy = deploy;
+//deploy in gh-pages
 
 ghpages.publish('build', {
 	message: 'Auto-generated commit'
