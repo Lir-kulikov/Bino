@@ -56,3 +56,7 @@ select {
   background: transparent;
   font: inherit;
 }
+
+input[type=text]::-ms-clear {
+  display: none;
+}

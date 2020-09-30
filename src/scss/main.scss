@@ -212,6 +212,7 @@ body {
     display: block;
     width: 40px;
     height: 30px;
+    margin-left: auto;
 
     &::before,
     &::after {
@@ -635,19 +636,22 @@ body {
   }
 
   &__item {
-    flex-basis: 25%;
+    //flex-basis: 25%;
+    width: 25%;
     margin-right: 28px;
     margin-left: 28px;
 
     @include _979 {
-      flex-basis: calc(50% - 30px);
+      //flex-basis: calc(50% - 30px);
+      width: calc(50% - 30px);
       margin-right: 15px;
       margin-bottom: 50px;
       margin-left: 15px;
     }
 
     @include _480 {
-      flex-basis: 100%;
+      //flex-basis: 100%;
+      width: 100%;
     }
   }
 }
@@ -785,7 +789,8 @@ body {
     margin-right: 80px;
 
     @include _1170 {
-      flex-basis: 40%;
+      //flex-basis: 40%;
+      width: 40%;
     }
 
     @include _979 {
@@ -916,8 +921,9 @@ body {
     top: 0;
     right: 0;
     width: 50%;
+    //flex-basis: 50%;
+    width: 50%;
     height: 100%;
-    flex-basis: 50%;
     padding-left: 78px;
   }
 
@@ -1399,9 +1405,11 @@ body {
   &__img {
     position: absolute;
     z-index: 0;
+    top: 50%;
     right: 0;
     width: 585px;
     height: 722px;
+    transform: translateY(-50%);
 
     @include _768 {
       display: none;
@@ -1567,15 +1575,18 @@ body {
   }
 
   &__item {
-    flex-basis: 20%;
+    //flex-basis: 20%;
+    width: 20%;
 
     @include _979 {
-      flex-basis: calc(100% / 3);
+      //flex-basis: calc(100% / 3);
+      width: calc(100% / 3);
       margin-bottom: 30px;
     }
 
     @include _600 {
-      flex-basis: 50%;
+      //flex-basis: 50%;
+      width: 50%;
       margin-bottom: 30px;
     }
   }
@@ -1694,7 +1705,8 @@ body {
   }
 
   &__cards-item {
-    flex-basis: calc(100% / 3);
+    //flex-basis: calc(100% / 3);
+    width: calc(100% / 3);
     margin: 0 8px;
 
     @include _1170 {
@@ -1737,9 +1749,9 @@ body {
   }
 
   &__price-wrapper {
-
     position: absolute;
     bottom: -38%;
+    left: 50%;
     display: flex;
     width: 153px;
     height: 153px;
@@ -1749,6 +1761,7 @@ body {
     background-color: $white;
     border-radius: 50%;
     box-shadow: 0 0 0 11px rgba($light-1, 0.5);
+    transform: translateX(-50%);
 
     @include _768 {
       width: 130px;
@@ -2115,8 +2128,9 @@ body {
   &__item {
     position: relative;
     display: flex;
+    //flex-basis: calc(20% - 30px);
+    width: calc(20% - 30px);
     height: 100px;
-    flex-basis: calc(20% - 30px);
     align-items: center;
     justify-content: center;
     margin-right: 15px;
@@ -2126,19 +2140,23 @@ body {
     transition: box-shadow $transition ease;
 
     @include _1170 {
-      flex-basis: calc(25% - 30px);
+      //flex-basis: calc(25% - 30px);
+      width: calc(25% - 30px);
     }
 
     @include _979 {
-      flex-basis: calc(33.333% - 30px);
+      //flex-basis: calc(33.333% - 30px);
+      width: calc(33.333% - 30px);
     }
 
     @include _768 {
-      flex-basis: calc(33.333% - 30px);
+      //flex-basis: calc(33.333% - 30px);
+      width: calc(33.333% - 30px);
     }
 
     @include _600 {
-      flex-basis: calc(50% - 30px);
+      //flex-basis: calc(50% - 30px);
+      width: calc(50% - 30px);
       margin-right: 5px;
       margin-bottom: 10px;
       margin-left: 5px;
@@ -2196,7 +2214,8 @@ body {
 
   &__item {
     @media (min-width: 1401px) {
-      flex-basis: 50%;
+      width: 50%;
+      //flex-basis: 50%;
 
       &:nth-child(4n),
       &:nth-child(4n-1) {
@@ -2210,7 +2229,8 @@ body {
     }
 
     @media screen and (min-width: 601px) and (max-width: 1400px) {
-      flex-basis: 100%;
+      //flex-basis: 100%;
+      width: 100%;
 
       &:nth-child(even) {
         flex-direction: row-reverse;
@@ -2233,19 +2253,22 @@ body {
   }
 
   &__img {
-    flex-basis: 50%;
+    width: 50%;
+    //flex-basis: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     @include _600 {
+      width: 100%;
       padding-top: 80%;
     }
   }
 
   &__info {
     position: relative;
-    flex-basis: 50%;
+    //flex-basis: 50%;
+    width: 50%;
     padding: 68px 50px 64px;
     background-color: $accent;
     color: $white;
@@ -2253,6 +2276,10 @@ body {
 
     @include _768 {
       padding: 30px;
+    }
+
+    @include _600 {
+      width: 100%;
     }
 
     @include _480 {
@@ -2542,6 +2569,7 @@ body {
   }
 
   &__textarea {
+    overflow: auto;
     min-height: 116px;
     resize: none;
   }
