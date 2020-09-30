@@ -150,6 +150,10 @@ body {
   left: 0;
   padding-top: 39px;
 
+  @include _768 {
+    padding-top: 20px;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -259,24 +263,22 @@ body {
 }
 
 .nav {
-  //width: 0;
+  overflow: hidden;
   height: 100%;
 
   @include _979 {
     position: absolute;
     top: 0;
     right: -105%;
+    width: 0;
     height: 100vh;
     background-color: rgba($dark-1, 0.95);
+    overflow-y: scroll;
     transition: all $transition ease;
 
     &.is-active {
       right: 0;
       width: 320px;
-
-      .nav__list {
-        display: flex;
-      }
     }
   }
 
@@ -292,10 +294,12 @@ body {
     justify-content: space-between;
 
     @include _979 {
-      display: none;
+      display: flex;
+      width: 100%;
       height: auto;
       flex-direction: column;
       margin-top: 100px;
+      transition: $transition ease;
     }
   }
 
@@ -2513,6 +2517,7 @@ body {
     width: 100%;
     padding: 5px 0;
     border-bottom: 1px solid rgba($dark-3, 0.25);
+    border-radius: 0;
     color: $dark-1;
     font-family: inherit;
     font-size: 16px;
