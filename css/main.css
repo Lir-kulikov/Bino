@@ -75,9 +75,9 @@ select {
 @font-face {
   font-display: swap;
   font-family: "OpenSans";
-  font-style: italic;
-  font-weight: 600;
-  src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -90,26 +90,10 @@ select {
 
 @font-face {
   font-display: swap;
-  font-family: "SourceSansPro";
-  font-style: normal;
+  font-family: "OpenSans";
+  font-style: italic;
   font-weight: 600;
-  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "SourceSansPro";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/.woff2") format("woff2");
+  src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2");
 }
 
 @font-face {
@@ -122,10 +106,18 @@ select {
 
 @font-face {
   font-display: swap;
-  font-family: "OpenSans";
+  font-family: "SourceSansPro";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2");
+  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SourceSansPro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
 }
 
 * {
@@ -266,6 +258,12 @@ body {
   padding-top: 39px;
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding-top: 20px;
+  }
+}
+
 .header__inner {
   display: flex;
   align-items: center;
@@ -372,6 +370,7 @@ body {
 }
 
 .nav {
+  overflow: hidden;
   height: 100%;
 }
 
@@ -380,16 +379,15 @@ body {
     position: absolute;
     top: 0;
     right: -105%;
+    width: 0;
     height: 100vh;
     background-color: rgba(32, 32, 32, 0.95);
+    overflow-y: scroll;
     transition: all 0.3s ease;
   }
   .nav.is-active {
     right: 0;
     width: 320px;
-  }
-  .nav.is-active .nav__list {
-    display: flex;
   }
 }
 
@@ -407,10 +405,12 @@ body {
 
 @media (max-width: 979px) {
   .nav__list {
-    display: none;
+    display: flex;
+    width: 100%;
     height: auto;
     flex-direction: column;
     margin-top: 100px;
+    transition: 0.3s ease;
   }
 }
 
@@ -2807,6 +2807,7 @@ body {
   width: 100%;
   padding: 5px 0;
   border-bottom: 1px solid rgba(153, 153, 153, 0.25);
+  border-radius: 0;
   color: #202020;
   font-family: inherit;
   font-size: 16px;
