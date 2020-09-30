@@ -1,7 +1,6 @@
-// import '../../node_modules/swiper/dist/js/swiper.min.js';
-// import Swiper from 'swiper'
-import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
+
+//import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper from '../js/vendor/swiper.min.js';
 
 const mySwiper = new Swiper(document.querySelector('.swiper-container'), {
     slidesPerView: 1,
