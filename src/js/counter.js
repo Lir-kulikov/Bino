@@ -39,11 +39,13 @@ window.addEventListener('scroll', () => {
   }
 });
 
-var ua = window.navigator.userAgent.toLowerCase(),
-is_ie = (/trident/gi).test(ua) || (/msie/gi).test(ua);
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
 
-if (is_ie === true) {
-  console.log('ie');
-} else {
-  console.log('ne ie');
+if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+  count1.innerHTML = '3891'
+  count2.innerHTML = '281'
+  count3.innerHTML = '618'
+  count4.innerHTML = '178'
+  count5.innerHTML = '285'
 }
