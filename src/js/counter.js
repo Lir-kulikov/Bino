@@ -1,4 +1,4 @@
-import { CountUp } from 'countup.js';
+import {CountUp} from '../js/vendor/countUp.withPolyfill.min.js';
 
 const count1 = document.querySelector('.js-count-1');
 const count2 = document.querySelector('.js-count-2');
