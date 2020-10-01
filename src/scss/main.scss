@@ -920,7 +920,6 @@ body {
     z-index: 0;
     top: 0;
     right: 0;
-    width: 50%;
     //flex-basis: 50%;
     width: 50%;
     height: 100%;
@@ -2563,6 +2562,14 @@ body {
 
     &:focus,
     &:not(:placeholder-shown),
+    &:-webkit-autofill {
+      & ~ label {
+        top: -20px;
+      }
+    }
+
+    &:focus,
+    &:not(:-ms-input-placeholder),
     &:-webkit-autofill {
       & ~ label {
         top: -20px;

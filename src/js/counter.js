@@ -1,4 +1,4 @@
-import {CountUp} from '../js/vendor/countUp.withPolyfill.min.js';
+import { CountUp } from '../js/vendor/countUp.withPolyfill.min.js';
 
 const count1 = document.querySelector('.js-count-1');
 const count2 = document.querySelector('.js-count-2');
@@ -38,39 +38,3 @@ window.addEventListener('scroll', () => {
     countUp5.start();
   }
 });
-
-
-
-
-// if (!countUp.error) {
-//   countUp.start();
-// } else {
-//   console.error(countUp.error);
-// }
-
-
-// if (!countUp2.error) {
-  
-// } else {
-//   console.error(countUp2.error);
-// }
-
-
-// if (!countUp3.error) {
-//   countUp3.start();
-// } else {
-//   console.error(countUp3.error);
-// }
-
-// if (!countUp4.error) {
-//   countUp4.start();
-// } else {
-//   console.error(countUp4.error);
-// }
-
-
-// if (!countUp5.error) {
-//   countUp5.start();
-// } else {
-//   console.error(countUp5.error);
-// }
