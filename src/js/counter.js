@@ -38,3 +38,12 @@ window.addEventListener('scroll', () => {
     countUp5.start();
   }
 });
+
+var ua = window.navigator.userAgent.toLowerCase(),
+is_ie = (/trident/gi).test(ua) || (/msie/gi).test(ua);
+
+if (is_ie === true) {
+  console.log('ie');
+} else {
+  console.log('ne ie');
+}
