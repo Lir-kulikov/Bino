@@ -1733,6 +1733,7 @@ body {
 }
 
 .pricing-card {
+  min-width: 285px;
   background-color: $light-1;
 
   &__header {
@@ -2560,20 +2561,17 @@ body {
     font-family: inherit;
     font-size: 16px;
 
-    &:focus,
-    &:not(:placeholder-shown),
-    &:-webkit-autofill {
-      & ~ label {
-        top: -20px;
-      }
-    }
+    // &:focus,
+    // &:not(:placeholder-shown),
+    // &:-webkit-autofill {
+    //   & ~ label {
+    //     top: -20px;
+    //   }
+    // }
 
-    &:focus,
-    &:not(:-ms-input-placeholder),
-    &:-webkit-autofill {
-      & ~ label {
-        top: -20px;
-      }
+    &:focus ~ label,
+    &:not(:focus):valid ~ label {
+      top: -20px;
     }
   }
 
