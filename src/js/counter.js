@@ -39,9 +39,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-var ua = window.navigator.userAgent;
-var msie = ua.indexOf("MSIE ");
-
 if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
   count1.innerHTML = '3891'
   count2.innerHTML = '281'

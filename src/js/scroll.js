@@ -1,5 +1,9 @@
 import SmoothScroll from '../../node_modules/smooth-scroll/dist/smooth-scroll.min.js';
 
+import smoothscroll from '../../node_modules/smoothscroll-polyfill/dist/smoothscroll.min';
+
+smoothscroll.polyfill();
+
 const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 500,
   speedAsDuration: true
