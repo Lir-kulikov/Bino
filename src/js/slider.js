@@ -79,7 +79,6 @@ function getServiceItemHeight () {
         serviceItemHeight = getAbsoluteHeight(serviceItem[i]);
         if (serviceItemHeight > h) {
             h = serviceItemHeight;
-            console.log(h);
         };
     }
     sliderServicesInfo.style.height = (h * mySwiperServicesInfo.slides[0].children.length + 'px');
