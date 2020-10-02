@@ -18,7 +18,7 @@
 /*!**************************!*\
   !*** ./src/js/burger.js ***!
   \**************************/
-/*! no static exports found */function(module,exports){eval("var burger = document.querySelector('.mobile-menu');\nvar scrollFixed = document.querySelector('body');\nvar nav = document.querySelector('.nav');\nvar navLinks = document.querySelectorAll('.nav__link');\nburger.addEventListener('click', function () {\n  burger.classList.toggle('is-active');\n  nav.classList.toggle('is-active');\n});\n\nfor (i = 0; i < navLinks.length; i++) {\n  navLinks[i].addEventListener('click', function () {\n    burger.classList.remove('is-active');\n    nav.classList.remove('is-active');\n  });\n}\n\n//# sourceURL=webpack:///./src/js/burger.js?")},"./src/js/counter.js":
+/*! no static exports found */function(module,exports){eval("var burger = document.querySelector('.mobile-menu');\nvar scrollFixed = document.querySelector('body');\nvar nav = document.querySelector('.nav');\nvar navLinks = document.querySelectorAll('.nav__link');\nburger.addEventListener('click', function () {\n  burger.classList.toggle('is-active');\n  nav.classList.toggle('is-active');\n\n  if (/MSIE \\d|Trident.*rv:/.test(navigator.userAgent)) {\n    if (nav.classList.contains('is-active')) {\n      nav.style.display = 'block';\n    } else {\n      nav.style.display = 'none';\n    }\n  }\n});\n\nfor (i = 0; i < navLinks.length; i++) {\n  navLinks[i].addEventListener('click', function () {\n    burger.classList.remove('is-active');\n    nav.classList.remove('is-active');\n  });\n}\n\n//# sourceURL=webpack:///./src/js/burger.js?")},"./src/js/counter.js":
 /*!***************************!*\
   !*** ./src/js/counter.js ***!
   \***************************/
