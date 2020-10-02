@@ -356,10 +356,43 @@ body {
 
 .hero {
   position: relative;
+  overflow: hidden;
   padding-top: 200px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__fly-first,
+  &__fly-second {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__fly-first {
+    background-image: url('../img/hero-fly-first.png');
+  }
+
+  &__fly-second {
+    background-image: url('../img/hero-fly-second.png');
+  }
 
   @include _600 {
     padding-top: 150px;
@@ -371,6 +404,7 @@ body {
 
   &::before {
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -381,10 +415,12 @@ body {
 
   &::after {
     position: absolute;
+    z-index: 2;
     bottom: 0;
     display: block;
     width: 0;
     height: 0;
+    padding-bottom: 30px;
     border-width: 6.5vw 50vw 0;
     border-style: solid;
     border-color: transparent $white transparent $white;
@@ -394,6 +430,7 @@ body {
 
   &__inner {
     position: relative;
+    z-index: 3;
     padding-top: 118px;
     padding-bottom: 263px;
     text-align: center;
@@ -500,8 +537,8 @@ body {
 
   &__dropdown {
     position: absolute;
-    z-index: 2;
-    bottom: -27px;
+    z-index: 4;
+    bottom: 0;
     left: 50%;
     display: flex;
     width: 64px;
@@ -600,20 +637,18 @@ body {
 }
 
 .swiper-button-prev {
-  //left: 50px;
   left: 3%;
   transform: rotate(180deg);
 }
 
 .swiper-button-next {
   right: 3%;
-  // right: 50px;
 }
 
 // features
 
 .features {
-
+  overflow: hidden;
   padding-top: 124px;
   padding-bottom: 111px;
   border-bottom: 1px solid #e6e7eb;

@@ -9,6 +9,9 @@ const rellax = new Rellax('.js-parallax', {
   relativeToWrapper: true,
 });
 
+const rellaxHero = new Rellax('.js-parallax-hero', {
+});
+
 const rellaxStart = new Rellax('.js-parallax-start', {
   wrapper: wrapperStart,
   relativeToWrapper: true,
