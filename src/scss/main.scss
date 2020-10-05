@@ -2645,8 +2645,12 @@ body {
       margin-bottom: 26px;
     }
 
-    &.form-group.has-danger .form-contacts__input {
+    &.form-group.has-danger {
       border-bottom: 1px solid $accent;
+
+      & .form-contacts__label {
+        top: -20px;
+      }
     }
 
     &.form-group.has-success .form-contacts__input {

@@ -5,6 +5,15 @@ import Pristine from '../js/vendor/pristine.js'
 const form = document.querySelector(".form-contacts");
 const pristine = new Pristine(form);
 
+function validate(obj)
+{
+  if(!obj.checkValidity())
+  {
+    alert("You have invalid input. Correct it!");
+    obj.focus();
+  }
+}
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     var valid = pristine.validate();
