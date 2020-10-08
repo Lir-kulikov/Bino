@@ -705,6 +705,8 @@ body {
     margin-right: auto;
     margin-bottom: 23px;
     margin-left: auto;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: $transition ease;
 
     &::before {
@@ -716,44 +718,6 @@ body {
       border: 1px solid rgba($dark-3, 0.25);
       content: '';
       transition: $transition ease;
-    }
-
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      display: block;
-      width: 30px;
-      height: 30px;
-      background-position: center;
-      background-repeat: no-repeat;
-      content: '';
-      transform: translateY(-50%) translateX(-50%);
-      transition: $transition ease;
-    }
-  }
-
-  &:nth-child(1) {
-    .feature-card__icon::after {
-      background-image: url('../img/glasses.png');
-    }
-  }
-
-  &:nth-child(2) {
-    .feature-card__icon::after {
-      background-image: url('../img/heart.png');
-    }
-  }
-
-  &:nth-child(3) {
-    .feature-card__icon::after {
-      background-image: url('../img/lamp.png');
-    }
-  }
-
-  &:nth-child(4) {
-    .feature-card__icon::after {
-      background-image: url('../img/messages.png');
     }
   }
 
@@ -1050,7 +1014,7 @@ body {
   }
 }
 
-.service-items__item:not(:last-child) {
+.service-items__elem:not(:last-child) {
   margin-bottom: 55px;
 
   @include _768 {
@@ -1288,7 +1252,7 @@ body {
   }
 }
 
-.works-cards {
+.works-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1319,38 +1283,6 @@ body {
     display: block;
     padding-top: 100%;
     content: '';
-  }
-
-  // &:nth-child(1) {
-  //   background-image: url('../img/work-1.jpg');
-  // }
-
-  &:nth-child(2) {
-    background-image: url('../img/work-2.jpg');
-  }
-
-  &:nth-child(3) {
-    background-image: url('../img/work-3.jpg');
-  }
-
-  &:nth-child(4) {
-    background-image: url('../img/work-4.jpg');
-  }
-
-  &:nth-child(5) {
-    background-image: url('../img/work-5.jpg');
-  }
-
-  &:nth-child(6) {
-    background-image: url('../img/work-6.jpg');
-  }
-
-  &:nth-child(7) {
-    background-image: url('../img/work-7.jpg');
-  }
-
-  &:nth-child(8) {
-    background-image: url('../img/work-8.jpg');
   }
 
   &__overlay {
@@ -1497,17 +1429,7 @@ body {
       margin-bottom: 40px;
     }
 
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('../img/lamp-white.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 23%;
-      content: '';
+    &-inner {
       transform: rotate(-45deg);
     }
   }
@@ -1550,7 +1472,6 @@ body {
     display: inline-block;
     min-width: 146px;
     padding: 13px;
-    background-color: #ffffff;
     font-size: 12px;
     font-weight: 400;
   }
@@ -1672,38 +1593,9 @@ body {
     }
   }
 
-  &:nth-child(1) {
-    .item-amount__icon {
-      background-image: url('../img/heart-figures.png');
-    }
-  }
-
   &:nth-child(2) {
-    .item-amount__icon {
-      background-image: url('../img/sticker-figures.png');
-    }
-
     .item-amount__number::after {
       content: 'K';
-    }
-  }
-
-  &:nth-child(3) {
-    .item-amount__icon {
-      background-image: url('../img/like-figures.png');
-    }
-  }
-
-  &:nth-child(4) {
-    .item-amount__icon {
-      background-image: url('../img/star-figures.png');
-    }
-  }
-
-  &:nth-child(5) {
-    .item-amount__icon {
-      background-image: url('../img/bookmark-figures.svg');
-      background-size: 25px;
     }
   }
 
