@@ -1,7 +1,7 @@
 //import '../../node_modules/zenscroll/zenscroll-min.js';
 //import zenscroll from 'zenscroll'
 import smoothscroll from 'smoothscroll-polyfill';
-import '../../node_modules/smoothscroll-anchor-polyfill';
+import smoothscrollAnchorPolyfill from 'smoothscroll-anchor-polyfill';
 smoothscroll.polyfill();
 
 
