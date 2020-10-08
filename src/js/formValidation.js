@@ -1,6 +1,6 @@
 //import Pristine from '../../node_modules/pristinejs/dist/pristine.min.js'
 
-import Pristine from '../js/vendor/pristine.js'
+import Pristine from '../js/vendor/pristine.js';
 
 const form = document.querySelector(".form-contacts");
 const pristine = new Pristine(form);

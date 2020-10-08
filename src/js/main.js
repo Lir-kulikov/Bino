@@ -1,3 +1,4 @@
+import './polyfills';
 import './slider';
 import './burger';
 import './adaptiveHeight';
