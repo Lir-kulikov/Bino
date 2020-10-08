@@ -1,7 +1,8 @@
-const $navList = document.querySelector('.works-nav__list');
+
+const $navList = document.querySelector('.js-horizontal-scroll');
 const $body = document.querySelector('body');
-const $shadowStart = document.querySelector('.works-nav__shadow--start');
-const $shadowEnd = document.querySelector('.works-nav__shadow--end');
+const $shadowStart = document.querySelector('.js-shadow-start');
+const $shadowEnd = document.querySelector('.js-shadow-end');
 
 function handleShadowVisibility() {
   const maxScrollStartReached = $navList.scrollLeft <= 0;
@@ -32,3 +33,4 @@ document.addEventListener("DOMContentLoaded", () => {
 addEventListener('resize', () => {
   handleShadowVisibility();
 });
+

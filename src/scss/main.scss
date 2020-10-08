@@ -679,13 +679,11 @@ body {
   }
 
   &__item {
-    //flex-basis: 25%;
     width: 25%;
     margin-right: 28px;
     margin-left: 28px;
 
     @include _979 {
-      //flex-basis: calc(50% - 30px);
       width: calc(50% - 30px);
       margin-right: 15px;
       margin-bottom: 50px;
@@ -693,7 +691,6 @@ body {
     }
 
     @include _480 {
-      //flex-basis: 100%;
       width: 100%;
     }
   }
@@ -832,7 +829,6 @@ body {
     margin-right: 80px;
 
     @include _1170 {
-      //flex-basis: 40%;
       width: 40%;
     }
 
@@ -963,7 +959,6 @@ body {
     z-index: 0;
     top: 0;
     right: 0;
-    //flex-basis: 50%;
     width: 50%;
     height: 100%;
     padding-left: 78px;
@@ -1650,17 +1645,14 @@ body {
   }
 
   &__item {
-    //flex-basis: 20%;
     width: 20%;
 
     @include _979 {
-      //flex-basis: calc(100% / 3);
       width: calc(100% / 3);
       margin-bottom: 30px;
     }
 
     @include _600 {
-      //flex-basis: 50%;
       width: 50%;
       margin-bottom: 30px;
     }
@@ -1763,11 +1755,12 @@ body {
   }
 
   &__cards {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
-    margin-right: calc(-8px - 15px);
-    margin-left: calc(-8px - 15px);
+    margin-right: -15px;
+    margin-left: -15px;
 
     @include _1170 {
       -webkit-overflow-scrolling: touch;
@@ -1782,20 +1775,27 @@ body {
 
   &__cards-item {
     width: calc(100% / 3);
-    margin: 0 8px;
+    margin-right: 8px;
+    margin-left: 8px;
 
     @include _1170 {
       min-width: max-content;
       flex-shrink: 0;
+      margin-bottom: 10px;
+
+      &:first-child, {
+        margin-left: 15px;
+      }
 
       &:last-child {
         position: relative;
+        margin-right: 15px;
 
         &::after {
           position: absolute;
-          right: -10px;
+          right: -15px;
           display: block;
-          width: 1px;
+          width: 15px;
           height: 1px;
           content: '';
         }
@@ -2235,11 +2235,11 @@ body {
   &__item {
     position: relative;
     display: flex;
-    //flex-basis: calc(20% - 30px);
     width: calc(20% - 30px);
     height: 100px;
     align-items: center;
     justify-content: center;
+    padding: 5px;
     margin-right: 15px;
     margin-bottom: 30px;
     margin-left: 15px;
@@ -2248,23 +2248,19 @@ body {
     transition: box-shadow $transition ease;
 
     @include _1170 {
-      //flex-basis: calc(25% - 30px);
       width: calc(25% - 30px);
     }
 
     @include _979 {
-      //flex-basis: calc(33.333% - 30px);
       width: calc(33.333% - 30px);
     }
 
     @include _768 {
-      //flex-basis: calc(33.333% - 30px);
       width: calc(33.333% - 30px);
     }
 
     @include _600 {
-      //flex-basis: calc(50% - 30px);
-      width: calc(50% - 30px);
+      width: calc(50% - 10px);
       margin-right: 5px;
       margin-bottom: 10px;
       margin-left: 5px;
@@ -2324,7 +2320,6 @@ body {
   &__item {
     @media (min-width: 1401px) {
       width: 50%;
-      //flex-basis: 50%;
 
       &:nth-child(4n),
       &:nth-child(4n-1) {
@@ -2338,7 +2333,6 @@ body {
     }
 
     @media screen and (min-width: 601px) and (max-width: 1400px) {
-      //flex-basis: 100%;
       width: 100%;
 
       &:nth-child(even) {
@@ -2363,7 +2357,6 @@ body {
 
   &__img {
     width: 50%;
-    //flex-basis: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2376,7 +2369,6 @@ body {
 
   &__info {
     position: relative;
-    //flex-basis: 50%;
     width: 50%;
     padding: 68px 50px 64px;
     background-color: $accent;
