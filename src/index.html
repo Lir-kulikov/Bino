@@ -396,8 +396,18 @@
                 <div class="swiper-pagination-study"></div>
               </div>
             </div>
+            <div class="swiper-container-study-images">
+              <div class="swiper-wrapper">
 
-            <img class="study__img" src="img/study.jpg" alt="#">
+                <div class="swiper-slide" style="background-image: url('img/study.jpg');"></div>
+
+                <div class="swiper-slide" style="background-image: url('img/study-2.jpg');"></div>
+
+                <div class="swiper-slide" style="background-image: url('img/study-3.jpg');"></div>
+
+              </div>
+            </div>
+            
           </div>
 
         </div>
@@ -702,7 +712,7 @@
               <li class="info-contacts__item">
                 <h3 class="info-contacts__title">EMAIL US</h3>
                 <span class="info-contacts__info">
-                  <a class="info-contacts__link" href="email:contactus@email.com">contactus@email.com</a>
+                  <a class="info-contacts__link" href="mailto:contactus@email.com">contactus@email.com</a>
                 </span>
               </li>
             </ul>
@@ -712,22 +722,22 @@
 
               <li class="form-contacts__item form-group">
                 <input type="text" class="form-contacts__input" placeholder=" " id="form-name" name="username" required>
-                <label for="form-name" class="form-contacts__label">Name</label>
+                <label for="form-name" class="form-contacts__label js-floating">Name</label>
               </li>
 
               <li class="form-contacts__item form-group">
                 <input type="email" class="form-contacts__input" id="form-email" placeholder=" " name="email" required>
-                <label for="form-email" class="form-contacts__label">Email</label>
+                <label for="form-email" class="form-contacts__label js-floating">Email</label>
               </li>
 
               <li class="form-contacts__item form-group">
                 <input type="text" class="form-contacts__input" id="form-subject" placeholder=" " name="subject" required>
-                <label for="form-subject" class="form-contacts__label">Subject</label>
+                <label for="form-subject" class="form-contacts__label js-floating">Subject</label>
               </li>
 
               <li class="form-contacts__item form-group">
                 <textarea class="form-contacts__input form-contacts__textarea" id="form-message" placeholder=" " name="message" required></textarea>
-                <label for="form-message" class="form-contacts__label">Message</label>
+                <label for="form-message" class="form-contacts__label js-floating">Message</label>
               </li>
 
             </ul>
@@ -763,8 +773,8 @@
       <use xlink:href="#up-arrow"></use>
     </svg>
   </a>
-
 </div>
+<div class="overlay"></div>
   <script src="js/main.js"></script>
 </body>
 

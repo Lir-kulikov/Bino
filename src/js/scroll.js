@@ -1,6 +1,5 @@
 import '../../node_modules/zenscroll/zenscroll-min.js';
 
-
 const topBtn = document.querySelector('.scroll-to-top');
 const top = document.querySelector('.header');
 

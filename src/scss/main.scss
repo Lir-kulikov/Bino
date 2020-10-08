@@ -27,6 +27,10 @@ body {
   font-family: $default;
   font-size: 14px;
   font-style: normal;
+
+  &.is-fixed {
+    overflow: hidden;
+  }
 }
 
 .page-wrapper {
@@ -432,7 +436,7 @@ body {
     position: relative;
     z-index: 3;
     padding-top: 118px;
-    padding-bottom: 263px;
+    padding-bottom: 294px;
     text-align: center;
 
     @include _979 {
@@ -441,7 +445,7 @@ body {
     }
 
     @include _480 {
-      padding-bottom: 70px;
+      padding-bottom: 100px;
     }
   }
 
@@ -1032,8 +1036,18 @@ body {
     background: none;
     border-radius: 0;
 
+    @include _768 {
+      width: 30px;
+      height: 50px;
+      border-left: 4px solid $dark-2;
+    }
+
     &:not(:last-child) {
       margin-bottom: 11px;
+
+      @include _768 {
+        margin-bottom: 25px;
+      }
     }
 
     &-active {
@@ -1041,6 +1055,12 @@ body {
       border-left: 2px solid $accent;
       background: none;
       border-radius: 0;
+
+      @include _768 {
+        width: 30px;
+        height: 50px;
+        border-left: 4px solid $accent;
+      }
     }
   }
 }
@@ -1441,17 +1461,28 @@ body {
   }
 
   &__img {
-    position: absolute;
-    z-index: 0;
-    top: 50%;
-    right: 0;
-    width: 585px;
-    height: 722px;
-    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+  }
+}
 
-    @include _768 {
-      display: none;
-    }
+.swiper-container-study-images {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 0;
+  width: 585px;
+  height: 722px;
+  transform: translateY(-50%);
+
+  @include _768 {
+    display: none;
+  }
+
+  & .swiper-slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
@@ -1729,12 +1760,13 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
-    margin-right: -8px;
-    margin-left: -8px;
+    margin-right: calc(-8px - 15px);
+    margin-left: calc(-8px - 15px);
 
     @include _1170 {
       -webkit-overflow-scrolling: touch;
       overflow-x: auto;
+      overflow-y: hidden;
     }
 
     @include _768 {
@@ -1743,7 +1775,6 @@ body {
   }
 
   &__cards-item {
-    //flex-basis: calc(100% / 3);
     width: calc(100% / 3);
     margin: 0 8px;
 
@@ -1772,8 +1803,11 @@ body {
 }
 
 .pricing-card {
-  min-width: 285px;
   background-color: $light-1;
+
+  @include _350 {
+    min-width: 89%;
+  }
 
   &__header {
     position: relative;
@@ -1784,6 +1818,10 @@ body {
 
     @include _768 {
       padding: 30px 20px 100px 20px;
+    }
+
+    @include _350 {
+      padding: 30px 20px 90px 20px;
     }
 
     &--active {
@@ -1819,6 +1857,12 @@ body {
       width: 130px;
       height: 130px;
     }
+
+    @include _350 {
+      bottom: -35%;
+      width: 110px;
+      height: 110px;
+    }
   }
 
   &__price {
@@ -1838,12 +1882,20 @@ body {
     padding: 120px 86px 50px 86px;
 
     @include _768 {
-      padding: 100px 40px 40px 40px;
+      padding: 100px 20px 40px 20px;
+    }
+
+    @include _350 {
+      padding: 80px 20px 40px 20px;
     }
   }
 
   &__list {
     margin-bottom: 46px;
+
+    @include _350 {
+      margin-bottom: 30px;
+    }
   }
 
   &__btn {
@@ -1999,7 +2051,7 @@ body {
 
       &:nth-child(1) {
         //margin-top: 55px;
-        margin-top: calc(7vw - 40px);
+        margin-top: calc(5vw - 40px);
 
         @include _768 {
           margin-top: 0;
@@ -2129,10 +2181,10 @@ body {
 // partners
 
 .partners {
-
   padding-top: 135px;
   padding-bottom: 110px;
   border-bottom: 1px solid #d8d9db;
+  background-color: $light-1;
 
   @include _768 {
     padding-top: 50px;
@@ -2185,6 +2237,7 @@ body {
     margin-right: 15px;
     margin-bottom: 30px;
     margin-left: 15px;
+    background-color: $white;
     box-shadow: $shadow-partner;
     transition: box-shadow $transition ease;
 
@@ -2236,6 +2289,7 @@ body {
 
 .blog {
   padding-top: 102px;
+  background-color: $light-1;
   text-align: center;
 
   @include _768 {
@@ -2429,7 +2483,7 @@ body {
 
   &__footer {
     position: relative;
-    padding-right: 20px;
+    padding-right: 30px;
     color: inherit;
     font-family: $second;
     font-size: 18px;
@@ -2447,7 +2501,7 @@ body {
       font-style: normal;
       font-weight: 400;
       line-height: 1;
-      transform: scaleY(1.1);
+      transform: scaleY(1.1) translateX(-12px);
       transition: transform $transition ease;
     }
 
@@ -2455,7 +2509,7 @@ body {
       border-bottom: 1px solid $white;
 
       &::after {
-        transform: translateX(10px);
+        transform: translateX(0);
       }
     }
   }
@@ -2608,10 +2662,10 @@ body {
     //   }
     // }
 
-    &:focus ~ label,
-    &:not(:focus):valid ~ label {
-      top: -20px;
-    }
+    // &:focus ~ label,
+    // &:not(:focus):valid ~ label {
+    //   top: -20px;
+    // }
   }
 
   .form-error {
@@ -2635,7 +2689,11 @@ body {
     font-family: $second;
     font-size: 14px;
     font-weight: 600;
-    transition: top $transition ease;
+    transition: transform $transition ease;
+
+    &.is-floating {
+      transform: scale(0.9) translateY(-20px);
+    }
   }
 
   &__item {
@@ -2645,12 +2703,8 @@ body {
       margin-bottom: 26px;
     }
 
-    &.form-group.has-danger {
+    &.form-group.has-danger .form-contacts__input {
       border-bottom: 1px solid $accent;
-
-      & .form-contacts__label {
-        top: -20px;
-      }
     }
 
     &.form-group.has-success .form-contacts__input {
@@ -2881,6 +2935,24 @@ body {
   &:hover {
     background-color: darken($accent, 10%);
   }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.overlay {
+  position: fixed;
+  //z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.3s all;
+  visibility: hidden;
 
   &.is-show {
     opacity: 1;
