@@ -57,10 +57,5 @@
     "vinyl-ftp": "^0.6.1",
     "webpack": "^4.43.0",
     "webpack-stream": "^5.2.1"
-  },
-  "browserslist": [
-    ">0.25%",
-    "not dead",
-    "ie >= 11"
-  ]
+  }
 }
