@@ -33,9 +33,9 @@ for(let i = 0; i < navLinks.length; i++) {
     });
 }
 //отключение overflow hidden на body при нажатии на навигацию
-navLinks.forEach(function(elem) {
-    elem.addEventListener('click', () => body.classList.remove('is-fixed'));
-})
+for(let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', () => body.classList.remove('is-fixed'));
+}
 
 overlay.addEventListener('click', () => {
     burger.classList.remove('is-active');
