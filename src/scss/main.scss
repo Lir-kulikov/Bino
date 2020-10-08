@@ -76,16 +76,6 @@ body {
       color: $accent;
     }
   }
-
-  &--disabled {
-    border: 1px solid $dark-3;
-    background-color: $dark-3;
-
-    &:hover {
-      border: 1px solid $dark-2;
-      background-color: $dark-2;
-    }
-  }
 }
 
 .title-sm {
@@ -1560,6 +1550,7 @@ body {
     display: inline-block;
     min-width: 146px;
     padding: 13px;
+    background-color: #ffffff;
     font-size: 12px;
     font-weight: 400;
   }
@@ -1821,6 +1812,7 @@ body {
     justify-content: center;
     padding: 40px 40px 130px 40px;
     background-color: $dark-3;
+    transition: $transition background-color ease;
 
     @include _768 {
       padding: 30px 20px 100px 20px;
@@ -1907,8 +1899,10 @@ body {
   &__btn {
     max-width: 148px;
     padding: 12px;
+    border: 1px solid $dark-3;
     margin-right: auto;
     margin-left: auto;
+    background-color: $dark-3;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.14px;
@@ -1921,6 +1915,17 @@ body {
 
     .pricing-card__price {
       color: $accent;
+    }
+  }
+
+  &:hover {
+    .pricing-card__btn {
+      border: 1px solid $accent;
+      background-color: $accent;
+    }
+
+    .pricing-card__header {
+      background-color: $accent;
     }
   }
 }
