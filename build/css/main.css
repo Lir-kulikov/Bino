@@ -72,32 +72,16 @@ input[type=text]::-ms-clear {
   font-display: swap;
   font-family: "OpenSans";
   font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "SourceSansPro";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2"), url("../fonts/SourceSansPro-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "SourceSansPro";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2"), url("../fonts/SourceSansPro-SemiBold.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "OpenSans";
-  font-style: normal;
   font-weight: 700;
   src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "SourceSansPro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2"), url("../fonts/SourceSansPro-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -110,6 +94,14 @@ input[type=text]::-ms-clear {
 
 @font-face {
   font-display: swap;
+  font-family: "SourceSansPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2"), url("../fonts/SourceSansPro-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
   font-family: "OpenSans";
   font-style: italic;
   font-weight: 600;
@@ -118,10 +110,18 @@ input[type=text]::-ms-clear {
 
 @font-face {
   font-display: swap;
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
   font-family: "SourceSansPro";
   font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2"), url("../fonts/SourceSansPro-Bold.woff") format("woff");
+  font-weight: 600;
+  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2"), url("../fonts/SourceSansPro-SemiBold.woff") format("woff");
 }
 
 * {
@@ -1402,6 +1402,12 @@ body.is-fixed {
 }
 
 @media (max-width: 768px) {
+  .works-nav__item {
+    padding-bottom: 10px;
+  }
+  .works-nav__item:first-child {
+    margin-left: 2px;
+  }
   .works-nav__item:last-child::after {
     position: absolute;
     right: -20px;
