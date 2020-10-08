@@ -1,4 +1,9 @@
-import '../../node_modules/zenscroll/zenscroll-min.js';
+//import '../../node_modules/zenscroll/zenscroll-min.js';
+//import zenscroll from 'zenscroll'
+import smoothscroll from 'smoothscroll-polyfill';
+import '../../node_modules/smoothscroll-anchor-polyfill';
+smoothscroll.polyfill();
+
 
 const topBtn = document.querySelector('.scroll-to-top');
 const top = document.querySelector('.header');
