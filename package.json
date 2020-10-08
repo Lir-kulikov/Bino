@@ -59,10 +59,8 @@
     "webpack-stream": "^5.2.1"
   },
   "browserslist": [
-    "last 2 version",
-    "> 1%",
-    "maintained node versions",
-    "ie >= 11",
-    "not dead"
+    ">0.25%",
+    "not dead",
+    "ie >= 11"
   ]
 }

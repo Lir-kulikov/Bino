@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+<svg style="display: none;">
+  <symbol viewBox="0 0 22 31" id="anchor" xmlns="http://www.w3.org/2000/svg"><path d="M21.926 17.97a.64.64 0 01-.567.349h-1.35c-.502 3.494-3.455 7.059-6.78 8.237l.25.312c.177.22.192.535.037.774l-1.98 3.063a.638.638 0 01-.536.294.639.639 0 01-.536-.294l-1.98-3.063a.665.665 0 01.037-.774l.249-.312c-3.325-1.178-6.277-4.743-6.78-8.238H.64a.64.64 0 01-.566-.348.667.667 0 01.036-.674l2.509-3.774a.638.638 0 011.061 0l2.51 3.774c.133.2.146.46.035.674a.64.64 0 01-.566.348H4.42c.534 2.248 2.749 4.048 5.084 4.613V8.466H7.509c-.55 0-.997-.456-.997-1.018s.446-1.018.997-1.018h1.027A3.728 3.728 0 017.36 3.713C7.36 1.665 8.993-.002 11-.002c2.006 0 3.64 1.667 3.64 3.715a3.73 3.73 0 01-1.177 2.717h1.028c.55 0 .997.456.997 1.018s-.446 1.018-.997 1.018h-1.995v14.465c2.335-.565 4.549-2.366 5.083-4.613H16.34a.64.64 0 01-.567-.348.667.667 0 01.036-.674l2.51-3.774a.637.637 0 011.06 0l2.51 3.774c.133.2.147.46.036.674zM9.355 3.713c0 .926.738 1.678 1.645 1.678s1.645-.752 1.645-1.678c0-.926-.738-1.679-1.645-1.679s-1.645.753-1.645 1.679z"/></symbol><symbol viewBox="0 0 365.696 365.696" id="close" xmlns="http://www.w3.org/2000/svg"><path d="M243.188 182.86L356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25l15.082 15.08c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0"/></symbol><symbol viewBox="0 0 12 20" id="fa-angle-left" xmlns="http://www.w3.org/2000/svg"><path d="M.168 18.26c0 .18.08.34.201.461l1.002 1.002c.12.12.3.2.461.2.16 0 .34-.08.461-.2l9.34-9.341c.121-.12.201-.3.201-.462a.69.69 0 00-.2-.46L2.294.12a.686.686 0 00-.462-.201c-.16 0-.34.08-.46.201L.368 1.122c-.12.12-.2.3-.2.461 0 .16.08.341.2.461L8.246 9.92.37 17.798a.693.693 0 00-.2.461z"/></symbol><symbol viewBox="0 0 10 20" id="facebook" xmlns="http://www.w3.org/2000/svg"><path d="M7.806 3.322h2.15V-.002H7.203v.015c-3.651.129-4.635 2.192-4.7 4.358h-.007v2.29H.008v3.324h2.487v10.003h4.137V9.985h2.513l.604-3.324H6.632V4.615c0-.73.483-1.293 1.174-1.293z"/></symbol><symbol viewBox="0 0 20 19" id="google_plus" xmlns="http://www.w3.org/2000/svg"><path d="M11.817 14.705c0 2.043-1.841 3.635-5.406 3.635-3.128 0-6.208-1.149-6.208-3.194 0-2.074 2.848-3.761 5.975-3.761.341 0 .654-.004.977-.004-.427-.421-.767-.922-.767-1.552 0-.375.12-.717.287-1.037-.171.013-.345.058-.523.058-2.57 0-4.29-1.752-4.29-4.029 0-2.226 2.376-3.98 4.902-3.98h5.633l-1.26.832H9.35c1.185 0 1.712 1.72 1.712 3.144 0 1.195-.555 2.097-1.487 2.829-.909.714-1.081 1.012-1.081 1.618 0 .518.974 1.397 1.482 1.762 1.489 1.057 1.84 2.038 1.84 3.679zM9.14 4.8c-.25-1.91-1.63-3.45-3.081-3.492-1.45-.045-2.423 1.42-2.172 3.335.25 1.916 1.628 3.504 3.08 3.546 1.451.043 2.424-1.472 2.174-3.389zm1.15 10.133c0-.199-.025-.394-.069-.58-.237-.937-.872-1.4-2.046-2.222a4.732 4.732 0 00-1.402-.224c-2.162-.025-4.098 1.324-4.098 2.941 0 1.652 1.562 2.586 3.723 2.586 3.04 0 3.892-.849 3.892-2.5zm7.352-13.299v2.54h2.482V5.85h-2.482v2.5h-1.658v-2.5h-2.483V4.174h2.483v-2.54z"/></symbol><symbol viewBox="0 0 21 20" id="linkedin" xmlns="http://www.w3.org/2000/svg"><path d="M.715 6.671h4.14V19.16H.715zM20.6 12.08v7.081h-4.141v-6.802c0-1.394-.997-2.79-2.631-2.79-1.635 0-2.357 1.396-2.357 2.825v6.767h-4.14V6.672h4.114v1.71c1.148-1.467 2.209-2.128 4.017-2.128 1.809 0 5.138.905 5.138 5.825zM5.237 2.79c0 1.214-1.09 2.2-2.434 2.2-1.346 0-2.436-.986-2.436-2.2 0-1.212 1.09-2.2 2.436-2.2 1.344 0 2.434.988 2.434 2.2z"/></symbol><symbol viewBox="0 0 21 20" id="rss" xmlns="http://www.w3.org/2000/svg"><path d="M6.237 17.071c0 1.6-1.297 2.891-2.9 2.891a2.894 2.894 0 01-2.9-2.891 2.897 2.897 0 012.9-2.891c1.603 0 2.9 1.296 2.9 2.891zm7.44 2.689c0 .079-.01.153-.013.232h-3.7c.001-.08.011-.153.011-.232 0-5.087-4.28-9.382-9.384-9.382-.05 0-.102.007-.153.008V6.697c.05-.001.103-.01.153-.01 7.144 0 13.086 5.95 13.086 13.073zm6.63 0c0 .077-.004.153-.006.232h-3.65c.002-.08.007-.155.007-.232 0-8.775-7.264-16.02-16.068-16.02-.05 0-.102.004-.153.004V.03C.488.03.541.025.591.025c10.844 0 19.716 8.925 19.716 19.735z"/></symbol><symbol viewBox="0 0 21 20" id="skype" xmlns="http://www.w3.org/2000/svg"><path d="M20.391 14.907c0 2.807-2.264 5.08-5.057 5.08-1.271 0-2.43-.24-3.318-1.019a8.89 8.89 0 01-1.836.193c-4.899 0-8.869-4.222-8.869-9.143 0-.649.073-1.28.204-1.889a5.063 5.063 0 01-1.02-3.048c0-2.808 2.266-5.083 5.058-5.083 1.254 0 2.4.696 3.283 1.455a9 9 0 011.344-.112c4.899 0 8.87 3.755 8.87 8.677 0 .452-.046.892-.11 1.328a5.07 5.07 0 011.451 3.561zm-5.549-2.488c0-.524-.1-.967-.302-1.325a2.544 2.544 0 00-.841-.896A5.467 5.467 0 0012.39 9.6a18.773 18.773 0 00-1.716-.454 32.247 32.247 0 01-1.087-.266 3.592 3.592 0 01-.65-.256 1.487 1.487 0 01-.504-.387.827.827 0 01-.184-.536c0-.336.18-.622.54-.86.359-.238.832-.355 1.417-.355.633 0 1.091.109 1.377.328.287.219.53.523.735.914.157.274.304.47.44.59.134.12.332.18.592.18a.954.954 0 00.715-.3.95.95 0 00.287-.676c0-.271-.077-.552-.23-.839-.152-.287-.395-.561-.727-.824-.331-.26-.747-.47-1.25-.628-.501-.157-1.097-.236-1.785-.236-.861 0-1.61.118-2.248.356-.638.239-1.125.58-1.46 1.022a2.436 2.436 0 00-.505 1.518c0 .598.158 1.097.477 1.5.318.404.75.72 1.293.955.542.232 1.216.436 2.022.61.602.127 1.082.248 1.442.36.36.114.653.277.88.49.226.213.34.494.34.837 0 .433-.211.796-.631 1.084-.421.29-.968.435-1.64.435-.49 0-.885-.073-1.187-.216a1.838 1.838 0 01-.699-.547 4.085 4.085 0 01-.463-.825c-.116-.28-.258-.488-.424-.63a.9.9 0 00-.608-.213c-.296 0-.54.091-.73.274a.865.865 0 00-.287.652c0 .439.16.89.478 1.352.319.465.734.837 1.242 1.114.72.385 1.632.578 2.739.578.922 0 1.72-.14 2.393-.424.673-.282 1.184-.673 1.534-1.171a2.878 2.878 0 00.524-1.687z"/></symbol><symbol viewBox="0 0 12 20" id="tumblr" xmlns="http://www.w3.org/2000/svg"><path d="M9.661 16.713c-1.705 0-2.63-1.332-2.63-2.36V8.358h4.138V4.993H7.031V-.002H4.138c0 4.34-3.751 5.146-3.751 5.146v3.177h2.49v7.134c0 2.477 2.275 4.533 5.041 4.533 2.766 0 4.09-1.105 4.09-1.105v-3.274s-.641 1.104-2.347 1.104z"/></symbol><symbol viewBox="0 0 25 23" id="twitter" xmlns="http://www.w3.org/2000/svg"><defs><filter id="ja" width="47.2" height="46.2" x="-11.1" y="-13.1" filterUnits="userSpaceOnUse"><feOffset dy="3" in="SourceGraphic" result="FeOffset1032Out"/><feGaussianBlur in="FeOffset1032Out" result="FeGaussianBlur1033Out" stdDeviation="1.16 1.16"/></filter><mask id="jb" width="2.02" height="2.02" x="-1.01" y="-1.01"><path d="M1.8-.2h21.4v17.4H1.8z"/><path d="M22.542 2.058c-.335.186-1.34.557-2.277.65.601-.327 1.49-1.392 1.71-2.241-.578.373-1.905.914-2.56.914v.001C18.668.6 17.615-.023 16.45-.023c-2.267 0-3.923 1.977-3.923 4.253 0 .316.037.625.104.921h-.001C9.554 5.07 6.011 3.364 3.986.715 2.742 2.88 3.819 5.442 5.231 6.32c-.483.037-1.374-.055-1.792-.467-.028 1.437.659 3.34 3.166 4.03-.482.261-1.337.187-1.709.13.13 1.214 1.82 2.8 3.669 2.8-.659.764-3.137 2.153-5.919 1.712a12.287 12.287 0 006.42 1.822c6.623 0 12.05-5.39 11.773-12.042l-.001-.023.001-.052-.002-.06c.603-.415 1.127-1.148 1.705-2.112z"/></mask></defs><g filter="url(#ja)"><path d="M22.542 2.058c-.335.186-1.34.557-2.277.65.601-.327 1.49-1.392 1.71-2.241-.578.373-1.905.914-2.56.914v.001C18.668.6 17.615-.023 16.45-.023c-2.267 0-3.923 1.977-3.923 4.253 0 .316.037.625.104.921h-.001C9.554 5.07 6.011 3.364 3.986.715 2.742 2.88 3.819 5.442 5.231 6.32c-.483.037-1.374-.055-1.792-.467-.028 1.437.659 3.34 3.166 4.03-.482.261-1.337.187-1.709.13.13 1.214 1.82 2.8 3.669 2.8-.659.764-3.137 2.153-5.919 1.712a12.287 12.287 0 006.42 1.822c6.623 0 12.05-5.39 11.773-12.042l-.001-.023.001-.052-.002-.06c.603-.415 1.127-1.148 1.705-2.112z" mask="url(#jb)"/><path fill-opacity=".25" d="M22.542 2.058c-.335.186-1.34.557-2.277.65.601-.327 1.49-1.392 1.71-2.241-.578.373-1.905.914-2.56.914v.001C18.668.6 17.615-.023 16.45-.023c-2.267 0-3.923 1.977-3.923 4.253 0 .316.037.625.104.921h-.001C9.554 5.07 6.011 3.364 3.986.715 2.742 2.88 3.819 5.442 5.231 6.32c-.483.037-1.374-.055-1.792-.467-.028 1.437.659 3.34 3.166 4.03-.482.261-1.337.187-1.709.13.13 1.214 1.82 2.8 3.669 2.8-.659.764-3.137 2.153-5.919 1.712a12.287 12.287 0 006.42 1.822c6.623 0 12.05-5.39 11.773-12.042l-.001-.023.001-.052-.002-.06c.603-.415 1.127-1.148 1.705-2.112z"/></g><path d="M22.542 2.058c-.335.186-1.34.557-2.277.65.601-.327 1.49-1.392 1.71-2.241-.578.373-1.905.914-2.56.914v.001C18.668.6 17.615-.023 16.45-.023c-2.267 0-3.923 1.977-3.923 4.253 0 .316.037.625.104.921h-.001C9.554 5.07 6.011 3.364 3.986.715 2.742 2.88 3.819 5.442 5.231 6.32c-.483.037-1.374-.055-1.792-.467-.028 1.437.659 3.34 3.166 4.03-.482.261-1.337.187-1.709.13.13 1.214 1.82 2.8 3.669 2.8-.659.764-3.137 2.153-5.919 1.712a12.287 12.287 0 006.42 1.822c6.623 0 12.05-5.39 11.773-12.042l-.001-.023.001-.052-.002-.06c.603-.415 1.127-1.148 1.705-2.112z"/></symbol><symbol viewBox="0 0 284.929 284.929" id="up-arrow" xmlns="http://www.w3.org/2000/svg"><path d="M282.082 195.285L149.028 62.24c-1.901-1.903-4.088-2.856-6.562-2.856s-4.665.953-6.567 2.856L2.856 195.285C.95 197.191 0 199.378 0 201.853c0 2.474.953 4.664 2.856 6.566l14.272 14.271c1.903 1.903 4.093 2.854 6.567 2.854s4.664-.951 6.567-2.854l112.204-112.202 112.208 112.209c1.902 1.903 4.093 2.848 6.563 2.848 2.478 0 4.668-.951 6.57-2.848l14.274-14.277c1.902-1.902 2.847-4.093 2.847-6.566.001-2.476-.944-4.666-2.846-6.569z"/></symbol><symbol viewBox="0 0 21 19" id="vimeo" xmlns="http://www.w3.org/2000/svg"><path d="M.287 5.482c1.75-1.375 4.241-3.98 6.182-3.98 1.94 0 2.415 1.838 2.682 3.884.267 2.045 1.027 6.516 2.054 6.516 1.028 0 3.367-3.957 3.234-5.484-.133-1.528-1.826-1.299-2.758-.861C12.536 2.5 14.516.695 17.044.695c2.53 0 3.138 1.941 3.138 4.098 0 3.287-6.77 13.358-10.859 13.358-2.531 0-3.159-3.67-3.671-5.484-.513-1.814-1.521-6.575-2.702-6.88-.456-.076-1.75.935-1.75.935z"/></symbol>
+</svg>
+<div class="page-wrapper">
+  <header class="header" id="top">
+  <div class="container">
+    <div class="header__inner">
+      <a href="#" title="Logo Bino" class="logo">
+        <span class="logo__first">B</span>
+        <span class="logo__second">INO</span>
+      </a>
+      <div class="mobile-menu">
+        <span class="mobile-menu__line"></span>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a href="#top" class="nav__link">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About Us</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#works" class="nav__link">Portfolio</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#pricing" class="nav__link">Pricing</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#team" class="nav__link">Team</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#blog" class="nav__link">Blog</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">Contact</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <main class="main">
+
+    <section class="hero js-parallax-hero" data-rellax-speed="2">
+      <div class="hero__bg js-parallax-hero" data-rellax-speed="-2" style="background-image: url('img/bg-herorbg2.jpg');"></div>
+      <div class="hero__fly-first js-parallax-hero" data-rellax-speed="7"></div>
+      <div class="hero__fly-second js-parallax-hero" data-rellax-speed="2"></div>
+        <div class="swiper-button-prev">
+          <svg class="swiper-button-icon">
+            <use xlink:href="#fa-angle-left"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg class="swiper-button-icon">
+            <use xlink:href="#fa-angle-left"></use>
+          </svg>
+        </div>
+        <div class="container">
+          <div class="hero__inner">
+            <div class="swiper-container">
+  
+              <div class="swiper-wrapper">
+  
+                <div class="swiper-slide">
+                  <h3 class="hero__subtitle">Our Clients Are Our First Priority</h3>
+                  <h1 class="hero__title">WELCOME TO BINO</h1>
+                  <div class="hero__circle-line circle-line"></div>
+                  <div class="hero__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book.</div>
+                </div>
+  
+                <div class="swiper-slide">
+                  <div class="hero__subtitle">Our Clients Are Our First Priority</div>
+                  <div class="hero__title">WELCOME TO BINO</div>
+                  <div class="hero__circle-line circle-line"></div>
+                  <div class="hero__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book.</div>
+                </div>
+  
+                <div class="swiper-slide">
+                  <div class="hero__subtitle">Our Clients Are Our First Priority</div>
+                  <div class="hero__title">WELCOME TO BINO</div>
+                  <div class="hero__circle-line circle-line"></div>
+                  <div class="hero__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book.</div>
+                </div>
+  
+              </div>
+            </div>
+            <div class="hero__action">
+              <a href="#contacts" class="hero__btn btn btn--solid">GET STARTED NOW</a>
+              <a href="#features" class="hero__btn btn btn--transparent">Learn more</a>
+            </div>
+            <a href="#features" class="hero__dropdown">
+              <svg class="hero__dropdown-icon">
+                <use xlink:href="#anchor"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+    </section>
+
+    <div class="features" id="features">
+      <div class="container">
+        <div class="features__inner">
+          <div class="features__item feature-card">
+            <div class="feature-card__icon" style="background-image: url('img/glasses.png');">
+            </div>
+            <span class="feature-card__title js-equal-height">SLEEK DESIGN</span>
+            <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
+              Ipsum has been the industry.</p>
+          </div>
+
+          <div class="features__item feature-card">
+            <div class="feature-card__icon" style="background-image: url('img/heart.png');">
+            </div>
+            <span class="feature-card__title js-equal-height">CLEAN CODE</span>
+            <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
+              Ipsum has been the industry.</p>
+          </div>
+
+          <div class="features__item feature-card">
+            <div class="feature-card__icon" style="background-image: url('img/lamp.png');">
+            </div>
+            <span class="feature-card__title js-equal-height">CREATIVE IDEAS</span>
+            <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
+              Ipsum has been the industry.</p>
+          </div>
+
+          <div class="features__item feature-card">
+            <div class="feature-card__icon" style="background-image: url('img/messages.png');">
+            </div>
+            <span class="feature-card__title js-equal-height">FREE SUPPORT</span>
+            <p class="feature-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
+              Ipsum has been the industry.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__img-wrapper">
+            <img src="img/Monitor.png" alt="" class="about__img">
+          </div>
+          <div class="about__info">
+            <h2 class="about__title title-sm">OUR HISTORY</h2>
+            <div class="about__text">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip sum has been the
+                industry's standard dummy text ever since the 1500s, when an unk- nown printer took a galley of type and
+                scrambled it to make a type specimen book.</p>
+              <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                versions of Lorem Ipsum.</p>
+            </div>
+            <a href="#works" class="btn btn--solid about__btn">BROWSE OUR WORK</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="swiper-pagination-services"></div>
+      <div class="container">
+        <div class="services__inner">
+          <div class="services__info">
+            <h2 class="services__title title-sm title-sm--light">OUR SERVICES</h2>
+            <div class="swiper-container-services-info services__slider-info">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-items">
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">WEB DESIGN</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">PRINT DESIGN</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">PHOTOGRAPHY</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                </div>
+
+                <div class="swiper-slide service-items">
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">WEB DESIGN</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">PRINT DESIGN</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">PHOTOGRAPHY</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                </div>
+
+                <div class="swiper-slide service-items">
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">WEB DESIGN</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">PRINT DESIGN</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+
+                  <div class="service-item service-items__elem">
+                    <h3 class="service-item__title">PHOTOGRAPHY</h3>
+                    <p class="service-item__text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                      industry. Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="services__images">
+            <div class="swiper-container-services-images services__slider-images">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide services__img" style="background-image: url('img/services-slide-1.jpg');">
+                </div>
+
+                <div class="swiper-slide services__img" style="background-image: url('img/services-slide-2.jpg');">
+                </div>
+
+                <div class="swiper-slide services__img" style="background-image: url('img/services-slide-3.jpg');">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="works" id="works">
+      <div class="works__inner">
+        <h2 class="works__title title-sm">RECENT WORKS</h2>
+        <p class="works__subtitle subtitle-sm">It has survived not only five centuries, but also the leap scrambled it
+          to make a type.</p>
+        <div class="circle-line works__circle-line"></div>
+
+        <div class="works__nav works-nav">
+          <ul class="works-nav__list js-horizontal-scroll">
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-all" checked="checked" name="works-nav">
+              <label class="works-nav__label" data-value="All" for="works-radio-all">All</label>
+            </li>
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-print-design" name="works-nav">
+              <label class="works-nav__label" data-value="Print Design" for="works-radio-print-design">Print Design</label>
+            </li>
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-animation" name="works-nav">
+              <label class="works-nav__label" data-value="Animation" for="works-radio-animation">Animation</label>
+            </li>
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-art" name="works-nav">
+              <label class="works-nav__label" data-value="Art" for="works-radio-art">Art</label>
+            </li>
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-web" name="works-nav">
+              <label class="works-nav__label" data-value="Web Design" for="works-radio-web">Web Design</label>
+            </li>
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-photo" name="works-nav">
+              <label class="works-nav__label" data-value="Photography" for="works-radio-photo">Photography</label>
+            </li>
+
+            <li class="works-nav__item">
+              <input class="works-nav__input" type="radio" id="works-radio-video" name="works-nav">
+              <label class="works-nav__label" data-value="Video" for="works-radio-video">Video</label>
+            </li>
+
+          </ul>
+          <div class="works-nav__shadow works-nav__shadow--start js-shadow-start"></div>
+          <div class="works-nav__shadow works-nav__shadow--end js-shadow-end"></div>
+        </div>
+
+        <div class="works-group">
+
+          <a href="#" class="works-card works-group__card" style="background-image: url('img/work-1.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-2.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-3.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-4.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-5.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-6.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-7.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+          <a href="#" class="works-card works-group__card"  style="background-image: url('img/work-8.jpg');">
+            <div class="works-card__overlay">
+              <h3 class="works-card__title">T-SHIRT DESIGN</h3>
+              <span class="works-card__info">art / t-shirt</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="study">
+      <div class="container">
+        <div class="study__inner">
+
+          <h2 class="study__title title-sm">CASE STUDY</h2>
+          <p class="study__subtitle subtitle-sm">A brief story about how this process works, keep an eye till the end.
+          </p>
+          <div class="circle-line study__circle-line"></div>
+
+          <div class="study__row">
+            <div class="study__info">
+              <div class="swiper-container-study-info">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide study-card">
+                    <div class="study-card__icon">
+                      <img class="study-card__icon-inner" src="img/lamp-white.png" alt="">
+                    </div>
+                    <h3 class="study-card__title">aCCUMULATE CREATIVE IDEAS</h3>
+                    <p class="study-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let.
+                      Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and
+                      typesetting let. Lorem Ipsum has been the industry Printing and typelorem Ipsum has been the
+                      setting let.</p>
+                    <a class="study-card__btn btn btn--solid" href="#">read more</a>
+                  </div>
+
+                  <div class="swiper-slide study-card">
+                    <div class="study-card__icon">
+                      <img class="study-card__icon-inner" src="img/lamp-white.png" alt="">
+                    </div>
+                    <h3 class="study-card__title">aCCUMULATE CREATIVE IDEAS</h3>
+                    <p class="study-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let.
+                      Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and
+                      typesetting let. Lorem Ipsum has been the industry Printing and typelorem Ipsum has been the
+                      setting let.</p>
+                    <a class="study-card__btn btn btn--solid" href="#">read more</a>
+                  </div>
+
+                  <div class="swiper-slide study-card">
+                    <div class="study-card__icon">
+                      <img class="study-card__icon-inner" src="img/lamp-white.png" alt="">
+                    </div>
+                    <h3 class="study-card__title">aCCUMULATE CREATIVE IDEAS</h3>
+                    <p class="study-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting let.
+                      Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and
+                      typesetting let. Lorem Ipsum has been the industry Printing and typelorem Ipsum has been the
+                      setting let.</p>
+                    <a class="study-card__btn btn btn--solid" href="#">read more</a>
+                  </div>
+
+                </div>
+                <div class="swiper-pagination-study"></div>
+              </div>
+            </div>
+            <div class="swiper-container-study-images">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide" style="background-image: url('img/study.jpg');"></div>
+
+                <div class="swiper-slide" style="background-image: url('img/study-2.jpg');"></div>
+
+                <div class="swiper-slide" style="background-image: url('img/study-3.jpg');"></div>
+
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="amount">
+        <div class="amount__bg js-parallax" data-rellax-speed="-2" style="background-image: url('img/bg-figures.jpg');">
+          <div class="container">
+            <div class="amount__inner js-parallax" data-rellax-speed="2">
+    
+              <div class="amount__item item-amount">
+                <div class="item-amount__icon" style="background-image: url('img/heart-figures.png');"></div>
+                <span class="item-amount__number js-count-1" id="count-1">3891</span>
+                <span class="item-amount__text">User Favourites</span>
+              </div>
+    
+              <div class="amount__item item-amount">
+                <div class="item-amount__icon" style="background-image: url('img/sticker-figures.png');"></div>
+                <span class="item-amount__number js-count-2">281</span>
+                <span class="item-amount__text">Posts Last 24 Hours</span>
+              </div>
+    
+              <div class="amount__item item-amount">
+                <div class="item-amount__icon" style="background-image: url('img/like-figures.png');"></div>
+                <span class="item-amount__number js-count-3">618</span>
+                <span class="item-amount__text">Total Posts</span>
+              </div>
+    
+              <div class="amount__item item-amount">
+                <div class="item-amount__icon" style="background-image: url('img/star-figures.png');"></div>
+                <span class="item-amount__number js-count-4">178</span>
+                <span class="item-amount__text">Campaigns</span>
+              </div>
+    
+              <div class="amount__item item-amount">
+                <div class="item-amount__icon" style="background-image: url('img/bookmark-figures.svg');"></div>
+                <span class="item-amount__number js-count-5">285</span>
+                <span class="item-amount__text">Amazing Features</span>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="pricing__inner">
+          <h2 class="pricing__title title-sm">OUR PRICING</h2>
+          <p class="pricing__subtitle subtitle-sm">A 30 days free trial for all. A brief story about how this process works, keep an eye till the end.</p>
+          <div class="circle-line pricing__circle-line"></div>
+          <div class="pricing__cards js-horizontal-scroll">
+
+            <div class="pricing-card pricing__cards-item">
+              <div class="pricing-card__header">
+                <h3 class="pricing-card__title">STARTER</h3>
+                <div class="pricing-card__price-wrapper">
+                  <span class="pricing-card__price">$19</span>
+                  <span class="pricing-card__time">per month</span>
+                </div>
+              </div>
+              <div class="pricing-card__body">
+                <ul class="pricing-card__list plus-list">
+                  <li class="plus-list__item">Competition Analysis Methods</li>
+                  <li class="plus-list__item">All Ranked URLs</li>
+                  <li class="plus-list__item">International Support System</li>
+                  <li class="plus-list__item">Social Media Tracking</li>
+                </ul>
+                <a class="btn pricing-card__btn btn--solid btn--disabled" href="#">CHOOSE PLAN</a>
+              </div>
+            </div>
+
+            <div class="pricing-card pricing__cards-item">
+              <div class="pricing-card__header">
+                <h3 class="pricing-card__title">PREMIUM</h3>
+                <div class="pricing-card__price-wrapper">
+                  <span class="pricing-card__price">$39</span>
+                  <span class="pricing-card__time">per month</span>
+                </div>
+              </div>
+              <div class="pricing-card__body">
+                <ul class="pricing-card__list plus-list">
+                  <li class="plus-list__item">Competition Analysis Methods</li>
+                  <li class="plus-list__item">All Ranked URLs</li>
+                  <li class="plus-list__item">International Support System</li>
+                  <li class="plus-list__item">Social Media Tracking</li>
+                </ul>
+                <a class="btn pricing-card__btn btn--disabled" href="#">CHOOSE PLAN</a>
+              </div>
+            </div>
+
+            <div class="pricing-card pricing__cards-item">
+              <div class="pricing-card__header">
+                <h3 class="pricing-card__title">BUSINESS</h3>
+                <div class="pricing-card__price-wrapper">
+                  <span class="pricing-card__price">$99</span>
+                  <span class="pricing-card__time">per month</span>
+                </div>
+              </div>
+              <div class="pricing-card__body">
+                <ul class="pricing-card__list plus-list">
+                  <li class="plus-list__item">Competition Analysis Methods</li>
+                  <li class="plus-list__item">All Ranked URLs</li>
+                  <li class="plus-list__item">International Support System</li>
+                  <li class="plus-list__item">Social Media Tracking</li>
+                </ul>
+                <a class="btn pricing-card__btn btn--solid btn--disabled" href="#">CHOOSE PLAN</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="team" style="background: linear-gradient(90deg, rgba(32, 32, 32, 1) 0, rgba(32, 32, 32, 0.75) 0, rgba(32, 32, 32, 0.75) 0), url('img/bg-team.jpg') center no-repeat;">
+      <div class="container">
+        <div class="team__inner">
+          <h2 class="team__title title-sm title-sm--white">OUR TEAM</h2>
+          <p class="team__subtitile subtitle-sm subtitle-sm--light">Meet the craziest team. Share your thoughts with them.</p>
+          <div class="circle-line team__circle-line"></div>
+          <div class="team-line team__line-team">
+
+            <div class="team-line__avatar-wrapper">
+              <img src="img/team-1.png" alt="#" class="team-line__avatar">
+              <div class="team-line__description">
+                <span class="team-line__name">Kazi Erfan</span>
+                <span class="team-line__position">UI/UX Designer</span>
+              </div>
+            </div>
+
+            <div class="team-line__avatar-wrapper">
+              <img src="img/team-2.png" alt="#" class="team-line__avatar">
+              <div class="team-line__description">
+                <span class="team-line__name">Kazi Erfan</span>
+                <span class="team-line__position">UI/UX Designer</span>
+              </div>
+            </div>
+
+            <div class="team-line__avatar-wrapper">
+              <img src="img/team-3.png" alt="#" class="team-line__avatar">
+              <div class="team-line__description">
+                <span class="team-line__name">Kazi Erfan</span>
+                <span class="team-line__position">UI/UX Designer</span>
+              </div>
+            </div>
+
+            <div class="team-line__avatar-wrapper">
+              <img src="img/team-4.png" alt="#" class="team-line__avatar">
+              <div class="team-line__description">
+                <span class="team-line__name">Kazi Erfan</span>
+                <span class="team-line__position">UI/UX Designer</span>
+              </div>
+            </div>
+
+            <div class="team-line__avatar-wrapper">
+              <img src="img/team-5.png" alt="#" class="team-line__avatar">
+              <div class="team-line__description">
+                <span class="team-line__name">Kazi Erfan</span>
+                <span class="team-line__position">UI/UX Designer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners">
+      <div class="container">
+        <div class="partners__inner">
+          <h2 class="partners__title title-sm">Great Integrations with Others</h2>
+          <p class="partners__subtitle subtitle-sm">Suspendisse sed eros mollis, tincidunt felis eget, interdum erat. <br>
+            Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum quam nec. </p>
+            <div class="circle-line"></div>
+          <div class="partners__group">
+
+            <div class="partners__item">
+              <img src="img/partners-black-1.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-2.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-3.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-4.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-5.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-6.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-7.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-8.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-9.jpg" alt="" class="partners__img-gray">
+            </div>
+
+            <div class="partners__item">
+              <img src="img/partners-black-10.jpg" alt="" class="partners__img-gray">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="blog" id="blog">
+      <h2 class="blog__title title-sm">OUR BLOG</h2>
+      <p class="blog__subtitle subtitle-sm">Suspendisse sed eros mollis, tincidunt felis eget, interdum eratullam sit amet odio.</p>
+      <div class="circle-line"></div>
+      <div class="blog__group">
+
+        <div class="blog__item blog-card">
+          <div class="blog-card__img" style="background-image: url('img/blog-1.png');"></div>
+          <div class="blog-card__info">
+            <div class="blog-card__header">
+              <span class="blog-card__subtitle">art / t-shirt</span>
+              <h3 class="blog-card__title">T-SHIRT DESIGN</h3>
+            </div>
+            <div class="blog-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</div>
+            <a class="blog-card__footer" href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog__item blog-card">
+          <div class="blog-card__img" style="background-image: url('img/blog-2.png');"></div>
+          <div class="blog-card__info">
+            <div class="blog-card__header">
+              <span class="blog-card__subtitle">art / t-shirt</span>
+              <h3 class="blog-card__title">T-SHIRT DESIGN</h3>
+            </div>
+            <div class="blog-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</div>
+            <a class="blog-card__footer" href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog__item blog-card">
+          <div class="blog-card__img" style="background-image: url('img/blog-3.png');"></div>
+          <div class="blog-card__info">
+            <div class="blog-card__header">
+              <span class="blog-card__subtitle">art / t-shirt</span>
+              <h3 class="blog-card__title">T-SHIRT DESIGN</h3>
+            </div>
+            <div class="blog-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</div>
+            <a class="blog-card__footer" href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog__item blog-card">
+          <div class="blog-card__img" style="background-image: url('img/blog-4.png');"></div>
+          <div class="blog-card__info">
+            <div class="blog-card__header">
+              <span class="blog-card__subtitle">art / t-shirt</span>
+              <h3 class="blog-card__title">T-SHIRT DESIGN</h3>
+            </div>
+            <div class="blog-card__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.</div>
+            <a class="blog-card__footer" href="#">Read More</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="contacts__title title-sm">kEEP IN TOUCH</h2>
+        <p class="contacts__subtitle subtitle-sm">Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum quam nec. </p>
+        <div class="circle-line"></div>
+
+        <div class="contacts__inner">
+          <div class="contacts__info info-contacts">
+            <ul class="info-contacts__list">
+              <li class="info-contacts__item">
+                <h3 class="info-contacts__title">OUR ADDRESS</h3>
+                <span class="info-contacts__info">House #13, Streat road, Sydney 2310 Australia</span>
+              </li>
+
+              <li class="info-contacts__item">
+                <h3 class="info-contacts__title">CALL US</h3>
+                <span class="info-contacts__info">
+                  <a class="info-contacts__link" href="tel:+8801681091425">+ 880 168 109 1425</a>
+                  <a class="info-contacts__link" href="tel:+0216809142">+ 0216809142</a>
+                </span>
+              </li>
+
+              <li class="info-contacts__item">
+                <h3 class="info-contacts__title">EMAIL US</h3>
+                <span class="info-contacts__info">
+                  <a class="info-contacts__link" href="mailto:contactus@email.com">contactus@email.com</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <form action="mail.php" class="contacts__form form-contacts" method="POST" novalidate>
+            <ul class="form-contacts__list">
+
+              <li class="form-contacts__item form-group">
+                <input type="text" class="form-contacts__input" placeholder=" " id="form-name" name="username" required>
+                <label for="form-name" class="form-contacts__label js-floating">Name</label>
+              </li>
+
+              <li class="form-contacts__item form-group">
+                <input type="email" class="form-contacts__input" id="form-email" placeholder=" " name="email" required>
+                <label for="form-email" class="form-contacts__label js-floating">Email</label>
+              </li>
+
+              <li class="form-contacts__item form-group">
+                <input type="text" class="form-contacts__input" id="form-subject" placeholder=" " name="subject" required>
+                <label for="form-subject" class="form-contacts__label js-floating">Subject</label>
+              </li>
+
+              <li class="form-contacts__item form-group">
+                <textarea class="form-contacts__input form-contacts__textarea" id="form-message" placeholder=" " name="message" required></textarea>
+                <label for="form-message" class="form-contacts__label js-floating">Message</label>
+              </li>
+
+            </ul>
+            <button type="submit" value="Submit" class="form-contacts__btn btn btn--solid">SEND MESSAGE</button>
+            <div class="form-thx">
+              <button class="form-thx__close" type="button">
+                <svg class="form-thx__icon">
+                  <use xlink:href="#close"></use>
+                </svg>
+              </button>
+              <div class="form-thx__text">Форма успешно отправлена, спасибо!</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="start">
+      <div class="start__bg js-parallax-start"  data-rellax-speed="-2" style="background-image: url('img/start-bg.jpg');">
+        <div class="container">
+          <div class="start__inner js-parallax-start" data-rellax-speed="2">
+            <h2 class="start__title">Let's Get Started Now. It's FREE!</h2>
+            <p class="start__subtitle">30 day free trial. Free plan allows up to 2 projects. Pay if you need more. Cancel anytime. No catches.</p>
+            <button class="start__btn btn btn--solid">start free trial</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__social social">
+        <ul class="social__list">
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#rss"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#google_plus"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#skype"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#vimeo"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#tumblr"></use>
+              </svg>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <span class="footer__copy">Kazi Erfan © All Rights Reserved </span>
+    </div>
+  </div>
+</footer>
+  <a href="#top" class="scroll-to-top">
+    <svg class="scroll-to-top__icon">
+      <use xlink:href="#up-arrow"></use>
+    </svg>
+  </a>
+</div>
+<div class="overlay"></div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
