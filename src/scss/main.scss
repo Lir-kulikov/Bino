@@ -2523,6 +2523,11 @@ body {
   }
 }
 
+.error {
+  background-color: red;
+  color: red;
+}
+
 .form-contacts {
   position: relative;
   overflow: hidden;
@@ -2552,22 +2557,17 @@ body {
     color: $dark-1;
     font-family: inherit;
     font-size: 16px;
-
-    // &:focus,
-    // &:not(:placeholder-shown),
-    // &:-webkit-autofill {
-    //   & ~ label {
-    //     top: -20px;
-    //   }
-    // }
-
-    // &:focus ~ label,
-    // &:not(:focus):valid ~ label {
-    //   top: -20px;
-    // }
   }
 
-  .form-error {
+  // .form-error {
+  //   position: absolute;
+  //   right: 0;
+  //   bottom: -20px;
+  //   color: $accent;
+  //   font-size: 14px;
+  // }
+
+  .error-message {
     position: absolute;
     right: 0;
     bottom: -20px;
