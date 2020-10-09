@@ -1,3 +1,4 @@
+import babelPolyfill from 'babel-polyfill';
 import './polyfills';
 import './slider';
 import './burger';
