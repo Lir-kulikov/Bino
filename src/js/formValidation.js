@@ -34,7 +34,7 @@
 // });
 
 // модальное окно
-import "../../node_modules/iterators-polyfill/polyfill.min"
+
 function thxModalForm () {
     document.querySelector('.form-thx').classList.add('is-open');
     setTimeout(() => {
@@ -71,13 +71,14 @@ var validate = new Bouncer('.form-contacts', {
 });
 
 document.addEventListener('bouncerFormValid', function () {
-    alert('Form submitted successfully!');
+    //alert('Form submitted successfully!');
     thxModalForm();
     for (let elem of form.elements) {
         if (
             !elem.classList.contains("btn") && !elem.classList.contains("form-thx")
         ) {
             elem.value = "";
+
 
             for (let i = 0; i < float.length; i++) {
                 float[i].classList.remove('is-floating');
