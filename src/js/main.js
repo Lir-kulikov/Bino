@@ -1,5 +1,5 @@
 import babelPolyfill from 'babel-polyfill';
-import './polyfills';
+//import './polyfills';
 import './slider';
 import './burger';
 import './adaptiveHeight';
