@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "countup.js": "^2.0.7",
+    "iterators-polyfill": "^1.0.2",
     "just-validate": "^1.5.0",
     "pristinejs": "^0.1.9",
     "rellax": "^1.12.1",
@@ -58,7 +59,7 @@
     "webpack": "^4.43.0",
     "webpack-stream": "^5.2.1"
   },
-    "browserslist": [
+  "browserslist": [
     ">0.25%",
     "not dead",
     "ie >= 11"
