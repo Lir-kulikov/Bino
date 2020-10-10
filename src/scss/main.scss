@@ -16,6 +16,10 @@
   outline: none;
 }
 
+html {
+  font-family: 'scroll-behavior: smooth';
+}
+
 body {
   position: relative;
   background-color: $white;
@@ -2557,14 +2561,6 @@ body {
       border-bottom: 1px solid $accent;
     }
   }
-
-  // .form-error {
-  //   position: absolute;
-  //   right: 0;
-  //   bottom: -20px;
-  //   color: $accent;
-  //   font-size: 14px;
-  // }
 
   .error-message {
     position: absolute;
