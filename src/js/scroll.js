@@ -1,6 +1,7 @@
-import smoothscroll from 'smoothscroll-polyfill';
+//import smoothscroll from 'smoothscroll-polyfill';
+import smoothscrollPolyfill from 'smoothscroll-polyfill';
 import smoothscrollAnchorPolyfill from 'smoothscroll-anchor-polyfill';
-smoothscroll.polyfill();
+smoothscrollPolyfill.polyfill();
 
 // обновление значений при ресайзе
 
