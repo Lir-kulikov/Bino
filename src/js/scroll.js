@@ -2,7 +2,7 @@
 // import smoothscrollPolyfill from 'smoothscroll-polyfill';
 // import smoothscrollAnchorPolyfill from 'smoothscroll-anchor-polyfill';
 // smoothscrollPolyfill.polyfill();
-
+smoothscrollPolyfill.polyfill();
 // обновление значений при ресайзе
 
 window.addEventListener('resize', () => {
