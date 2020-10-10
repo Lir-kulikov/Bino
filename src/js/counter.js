@@ -26,11 +26,11 @@ const countUp5 = new CountUp(count5, 285, {
 });
 
 window.addEventListener('scroll', () => {
-  let scrollY = window.scrollY;
+  let pageYOffset = window.pageYOffset;
 
   let amountOffset = section.offsetTop;
 
-  if (scrollY >= amountOffset - 600) {
+  if (pageYOffset >= amountOffset - 600) {
     countUp.start();
     countUp2.start();
     countUp3.start();
@@ -39,10 +39,10 @@ window.addEventListener('scroll', () => {
   }
 });
 
-if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-  count1.innerHTML = '3891'
-  count2.innerHTML = '281'
-  count3.innerHTML = '618'
-  count4.innerHTML = '178'
-  count5.innerHTML = '285'
-}
+// if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+//   count1.innerHTML = '3891'
+//   count2.innerHTML = '281'
+//   count3.innerHTML = '618'
+//   count4.innerHTML = '178'
+//   count5.innerHTML = '285'
+// }
