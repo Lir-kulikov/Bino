@@ -7,10 +7,14 @@ var validate = new Bouncer('.form-contacts', {
 
 //скрытие ошибок, если поле осталось пустым
 
+let trySubmit = 0; // для проверки неудачной отправки формы
+const submitBtn = document.querySelector('.form-contacts__btn');
+submitBtn.addEventListener('click', () => trySubmit = 1);
+
 for (let elem of form.elements) {
     if (!elem.classList.contains("btn") && !elem.classList.contains("form-thx")) {
         elem.addEventListener('blur', () => {
-            if (elem.value == "") {
+            if (elem.value == "" && trySubmit == 0) {
                 elem.classList.remove('error');
                 elem.nextElementSibling.remove();
             }
@@ -34,6 +38,7 @@ for (let elem of form.elements) {
 
 document.addEventListener('bouncerFormValid', function () {
     thxModalForm();
+    trySubmit = 0;
     for (let elem of form.elements) {
         if (!elem.classList.contains("btn") && !elem.classList.contains("form-thx")) {
             elem.value = "";
