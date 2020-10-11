@@ -1,3 +1,49 @@
+const form = document.querySelector(".form-contacts");
+import Bouncer from '../js/vendor/bouncer.polyfills.min';
+var validate = new Bouncer('.form-contacts', {
+    disableSubmit: true,
+    messageAfterField: true
+});
+
+//скрытие ошибок, если поле осталось пустым
+
+for (let elem of form.elements) {
+    if (!elem.classList.contains("btn") && !elem.classList.contains("form-thx")) {
+        elem.addEventListener('blur', () => {
+            if (elem.value == "") {
+                elem.classList.remove('error');
+                elem.nextElementSibling.remove();
+            }
+        })
+    }
+}
+
+// стилизация верного ввода
+
+for (let elem of form.elements) {
+    if (!elem.classList.contains("btn") && !elem.classList.contains("form-thx")) {
+        elem.addEventListener('blur', () => {
+            if (elem.validity.valid == true) {
+                elem.classList.add('is-valid');
+            }
+        })
+    }
+}
+
+// вызов модального окна и очищение формы
+
+document.addEventListener('bouncerFormValid', function () {
+    thxModalForm();
+    for (let elem of form.elements) {
+        if (!elem.classList.contains("btn") && !elem.classList.contains("form-thx")) {
+            elem.value = "";
+            elem.classList.remove('is-valid');
+            for (let i = 0; i < float.length; i++) {
+                float[i].classList.remove('is-floating');
+            }
+        }
+    }
+}, false);
 
 // thx modal
 
@@ -29,26 +75,3 @@ function floatingLabels () {
 
 floatingLabels ();
 
-const form = document.querySelector(".form-contacts");
-import Bouncer from '../js/vendor/bouncer.polyfills.min';
-var validate = new Bouncer('.form-contacts', {
-    disableSubmit: true,
-    messageAfterField: true
-});
-
-document.addEventListener('bouncerFormValid', function () {
-    //alert('Form submitted successfully!');
-    thxModalForm();
-    for (let elem of form.elements) {
-        if (
-            !elem.classList.contains("btn") && !elem.classList.contains("form-thx")
-        ) {
-            elem.value = "";
-
-
-            for (let i = 0; i < float.length; i++) {
-                float[i].classList.remove('is-floating');
-            }
-        }
-    }
-}, false);

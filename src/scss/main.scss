@@ -1614,6 +1614,12 @@ body {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1.5px;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+
+    &.is-view {
+      opacity: 1;
+    }
   }
 
   &__text {
@@ -2568,6 +2574,10 @@ body {
     &.error {
       border-bottom: 1px solid $accent;
     }
+
+    &.is-valid {
+      border-bottom: 1px solid green;
+    }
   }
 
   .error-message {
@@ -2607,14 +2617,6 @@ body {
 
     &:not(:last-child) {
       margin-bottom: 26px;
-    }
-
-    &.form-group.has-danger .form-contacts__input {
-      border-bottom: 1px solid $accent;
-    }
-
-    &.form-group.has-success .form-contacts__input {
-      border-bottom: 1px solid green;
     }
   }
 

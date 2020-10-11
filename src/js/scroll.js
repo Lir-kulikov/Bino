@@ -1,8 +1,8 @@
 import SmoothScroll from 'smooth-scroll';
 
 var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 300,
-	//speedAsDuration: true
+	speed: 600,
+	speedAsDuration: true
 });
 
 window.addEventListener('resize', () => {
@@ -22,3 +22,4 @@ function showScroll() {
     document.querySelector('.scroll-to-top').classList.remove('is-show');
   }
 }
+
