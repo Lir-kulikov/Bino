@@ -16,7 +16,8 @@ for (let elem of form.elements) {
         elem.addEventListener('blur', () => {
             if (elem.value == "" && trySubmit == 0) {
                 elem.classList.remove('error');
-                elem.nextElementSibling.remove();
+                //elem.nextElementSibling.remove(); не работает в ie
+                elem.nextElementSibling.parentNode.removeChild(elem.nextElementSibling);
             }
         })
     }
